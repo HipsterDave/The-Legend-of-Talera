@@ -49,4 +49,4 @@ In future updates, _The Legend of Talera_ will include:
  - [@Vadercat](https://repl.it/@Vadercat "Vadercat")
  - [@CodecusMaximus](https://repl.it/@CodecusMaximus "CodecusMaximus")
 ___
-Also, check out this project on [Github](https://github.com/HipsterDave/legend-of-talera).
+Also, check out this project on [Github](https://github.com/HipsterDave/The-Legend-of-Talera).
