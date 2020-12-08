@@ -41,10 +41,22 @@ In future updates, _The Legend of Talera_ will include:
  - Save and load feature
  - Skip text feature
 
+## How to add to this code with Github
+First, pull the latest code.
+Then, create a new branch. Please name it in this format:
+
+**initials/name-of-program**
+
+For instance, a branch could look like:
+
+**rb/example-branch**
+
+After you finish your edits, commit and push. Add a message saying what you did, and then make a pull request.
+
 ## Credits
 **Game Development**
  - [@HipsterDave](https://repl.it/@HipsterDave "HipsterDave")
- 
+
 **Beta-Testers**
  - [@Vadercat](https://repl.it/@Vadercat "Vadercat")
  - [@CodecusMaximus](https://repl.it/@CodecusMaximus "CodecusMaximus")
