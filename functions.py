@@ -55,7 +55,7 @@ def credits():
 	clear()
 	mainmenu()
 
-def loding(repeat):
+def loading(repeat):
 	x = repeat
 	while x > 0:
 		x = x - 1
@@ -69,7 +69,7 @@ def loding(repeat):
 		time.sleep(1)
 		clear()
 
-def textloding(repeat, text):
+def textloading(repeat, text):
 	x = repeat
 	while x > 0:
 		x = x - 1
