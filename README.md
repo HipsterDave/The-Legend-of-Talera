@@ -2,7 +2,7 @@
 
 Welcome to this fabulous text adventure! In _The Legend of Talera_, you are an adventurer that will collect different artifacts from places around Talera.
 
-You will get a level of four things. They are **knowledge**, **strength**, **charisma**, and **speed**. It may look something like this:
+You will get a level of four skills. They are **knowledge**, **strength**, **charisma**, and **speed**. It may look something like this:
 ```
 Your knowledge level is 4.
 Your strength level is 6.
