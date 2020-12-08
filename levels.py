@@ -53,7 +53,7 @@ def mines():
 	global charisma
 	global strength
 	global knowledge
-	functions.textloding(3, "Rolling Dice")
+	functions.textloading(3, "Rolling Dice")
 	levelnumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 	knowledge = random.choice(levelnumbers)
 	strength = random.choice(levelnumbers)
@@ -69,7 +69,7 @@ def mines():
 	typing("Please press enter to continue.\n")
 	input("> ")
 	clear()
-	functions.textloding(3, "Traveling to THE MINES")
+	functions.textloading(3, "Traveling to THE MINES")
 	typing("Welcome to THE MINES! Today, your goal is the get the famous TALREA RUBY.\n")
 	typing("You will need to get past rock monsters and big avalanches.\n")
 	typing("Let's begin!\n")
@@ -283,7 +283,7 @@ def forest():
 	typing("Before we travel to THE FOREST, we need to set your levels.\n")
 	time.sleep(1)
 	clear()
-	functions.textloding(3, "Rolling Dice")
+	functions.textloading(3, "Rolling Dice")
 	levelnumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 	knowledge = random.choice(levelnumbers)
 	strength = random.choice(levelnumbers)
@@ -299,7 +299,7 @@ def forest():
 	typing("Please press enter to continue.\n")
 	input("> ")
 	clear()
-	functions.textloding(3, "Traveling to THE FOREST")
+	functions.textloading(3, "Traveling to THE FOREST")
 	typing("Welcome to THE FOREST! Today, your goal is to get the ELVERN FLUTE.\n")
 	typing("Let's begin!\n")
 	typing("For this adventure, you need to choose a weapon. This will affect the game later on.\n")
