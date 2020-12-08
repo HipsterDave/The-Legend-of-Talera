@@ -2,7 +2,7 @@
 
 Welcome to this fabulous text adventure! In _The Legend of Talera_, you are an adventurer that will collect different artifacts from places around Talera.
 
-You will get a level of four skills. They are **knowledge**, **strength**, **charisma**, and **speed**. It may look something like this:
+You will get a level of four things. They are **knowledge**, **strength**, **charisma**, and **speed**. It may look something like this:
 ```
 Your knowledge level is 4.
 Your strength level is 6.
@@ -12,14 +12,14 @@ Your average level is 5.5.
 ```
 I would suggest that you write these scores down, as you cannot come back to them.
 
-You will also get numbered choices. These will depend mostly on your levels. It may look something like this:
+You will also get numbered choices. The right choice will depend mostly on your levels. It may look something like this:
 ```
 Here are your options:
 1) Fight
 2) Run
 3) Negotiate
 ```
-This is the basics of this game. Happy playing!
+These are the basics of this game. Happy playing!
 ## Obtainable Items
 Here are the current items you can get:
  - Talera Ruby
@@ -56,6 +56,7 @@ After you finish your edits, commit and push. Add a message saying what you did,
 ## Credits
 **Game Development**
  - [@HipsterDave](https://repl.it/@HipsterDave "HipsterDave")
+ - [@Vadercat](https://repl.it/@Vadercat "Vadercat")
 
 **Beta-Testers**
  - [@Vadercat](https://repl.it/@Vadercat "Vadercat")
