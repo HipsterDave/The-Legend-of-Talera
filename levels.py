@@ -30,7 +30,10 @@ def waiting_room():
 typingspeed = 100
 
 def clear():
-	os.system("clear")
+	if sys.platform.startswith("linux"):
+		os.system("clear")
+	elif sys.platform.startswith("win32"):
+		os.system("cls")
 
 def typing(text):
 	for letter in text:
