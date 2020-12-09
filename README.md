@@ -38,8 +38,10 @@ More items are coming, so stay tuned!
 ## Future Updates
 In future updates, _The Legend of Talera_ will include:
  - New forest level
+ - New mountain level
  - Save and load feature
  - Skip text feature
+ - A surprise feature
 
 ## How to add to this code with Github
 First, pull the latest code.
