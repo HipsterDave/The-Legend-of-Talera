@@ -273,7 +273,7 @@ def mines_again():
 		clear()
 		typing("You admire the ruby.\n")
 		time.sleep(1)
-		functions.textloding(3, "Admiring the TALERA RUBY")
+		functions.textloading(3, "Admiring the TALERA RUBY")
 		typing("How is this going to help?\n")
 		text.youlost()
 		functions.waitingroom_teleport()
