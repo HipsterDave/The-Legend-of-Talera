@@ -21,7 +21,10 @@ def settype(text, typing_speed):
 		time.sleep(random.random()*10/typing_speed)
 
 def clear():
-	os.system("clear")
+	if sys.platform.startswith("linux"):
+		os.system("clear")
+	elif sys.platform.startswith("win32"):
+		os.system("cls")
 
 def mainmenu():
 	text.mainmenu()
