@@ -72,6 +72,8 @@ def cityhub():
                 if coins < gas_station_coffee_price:
                     clear()
                     typing("You do not have enough coins to buy this.\n")
+                    short = str(gas_station_coffee_price - coins)
+                    typing("You are " + short + " coins short.")
                     time.sleep(2)
                 else:
                     clear()
@@ -85,6 +87,8 @@ def cityhub():
                 if coins < black_coffee_price:
                     clear()
                     typing("You do not have enough coins to buy this.\n")
+                    short = str(black_coffee_price - coins)
+                    typing("You are " + short + " coins short.")
                     time.sleep(2)
                 else:
                     clear()
@@ -98,6 +102,8 @@ def cityhub():
                 if coins < cappuccino_price:
                     clear()
                     typing("You do not have enough coins to buy this.\n")
+                    short = str(cappuccino_price - coins)
+                    typing("You are " + short + " coins short.")
                     time.sleep(2)
                 else:
                     clear()
@@ -111,6 +117,8 @@ def cityhub():
                 if coins < latte_price:
                     clear()
                     typing("You do not have enough coins to buy this.\n")
+                    short = str(latte_price - coins)
+                    typing("You are " + short + " coins short.")
                     time.sleep(2)
                 else:
                     clear()
@@ -124,6 +132,8 @@ def cityhub():
                 if coins < elvern_berry_tea_price:
                     clear()
                     typing("You do not have enough coins to buy this.\n")
+                    short = str(elvern_berry_tea_price - coins)
+                    typing("You are " + short + " coins short.")
                     time.sleep(2)
                 else:
                     clear()
@@ -161,6 +171,8 @@ def cityhub():
                     if coins < fedora_price:
                         clear()
                         typing("You do not have enough coins to buy this.\n")
+                        short = str(fedora_price - coins)
+                        typing("You are " + short + " coins short.")
                         time.sleep(2)
                     else:
                         clear()
@@ -175,6 +187,8 @@ def cityhub():
                     if coins < baseball_cap_price:
                         clear()
                         typing("You do not have enough coins to buy this.\n")
+                        short = str(baseball_cap_price - coins)
+                        typing("You are " + short + " coins short.")
                         time.sleep(2)
                     else:
                         clear()
@@ -189,6 +203,8 @@ def cityhub():
                     if coins < talera_hat_price:
                         clear()
                         typing("You do not have enough coins to buy this.\n")
+                        short = str(talera_hat_price - coins)
+                        typing("You are " + short + " coins short.")
                         time.sleep(2)
                     else:
                         clear()
@@ -203,6 +219,8 @@ def cityhub():
                     if coins < talera_hat_price:
                         clear()
                         typing("You do not have enough coins to buy this.\n")
+                        short = str(talera_hat_price - coins)
+                        typing("You are " + short + " coins short.")
                         time.sleep(2)
                     else:
                         clear()
@@ -225,6 +243,8 @@ def cityhub():
                     if coins < white_Tshirt_price:
                         clear()
                         typing("You do not have enough coins to buy this.\n")
+                        short = str(white_Tshirt_price - coins)
+                        typing("You are " + short + " coins short.")
                         time.sleep(2)
                     else:
                         clear()
@@ -239,6 +259,8 @@ def cityhub():
                     if coins < talera_shirt_price:
                         clear()
                         typing("You do not have enough coins to buy this.\n")
+                        short = str(talera_shirt_price - coins)
+                        typing("You are " + short + " coins short.")
                         time.sleep(2)
                     else:
                         clear()
@@ -255,7 +277,7 @@ def cityhub():
                 clear()
                 print("PANTS")
                 print("1) Blue Jeans - 15 coins")
-                print("2) Gym Shorts - 15 coin")
+                print("2) Gym Shorts - 15 coins")
                 pair_of_pants = ""
                 while pair_of_pants not in ["1", "2"]:
                     pair_of_pants = input("> ")
@@ -264,6 +286,8 @@ def cityhub():
                     if coins < blue_jeans_price:
                         clear()
                         typing("You do not have enough coins to buy this.\n")
+                        short = str(blue_jeans_price - coins)
+                        typing("You are " + short + " coins short.")
                         time.sleep(2)
                     else:
                         clear()
@@ -278,6 +302,8 @@ def cityhub():
                     if coins < gym_shorts_price:
                         clear()
                         typing("You do not have enough coins to buy this.\n")
+                        short = str(gym_shorts_price - coins)
+                        typing("You are " + short + " coins short.")
                         time.sleep(2)
                     else:
                         clear()
@@ -300,6 +326,8 @@ def cityhub():
                     if coins < ripoff_sneakers_price:
                         clear()
                         typing("You do not have enough coins to buy this.\n")
+                        short = str(ripoff_sneakers_price - coins)
+                        typing("You are " + short + " coins short.")
                         time.sleep(2)
                     else:
                         clear()
@@ -314,6 +342,8 @@ def cityhub():
                     if coins < hiking_boots_price:
                         clear()
                         typing("You do not have enough coins to buy this.\n")
+                        short = str(hiking_boots_price - coins)
+                        typing("You are " + short + " coins short.")
                         time.sleep(2)
                     else:
                         clear()
@@ -337,6 +367,8 @@ def cityhub():
                     if coins < winter_coat_price:
                         clear()
                         typing("You do not have enough coins to buy this.\n")
+                        short = str(winter_coat_price - coins)
+                        typing("You are " + short + " coins short.")
                         time.sleep(2)
                     else:
                         clear()
@@ -351,6 +383,8 @@ def cityhub():
                     if coins < necktie_price:
                         clear()
                         typing("You do not have enough coins to buy this.\n")
+                        short = str(necktie_price - coins)
+                        typing("You are " + short + " coins short.")
                         time.sleep(2)
                     else:
                         clear()
@@ -365,6 +399,8 @@ def cityhub():
                     if coins < bowtie_price:
                         clear()
                         typing("You do not have enough coins to buy this.\n")
+                        short = str(bowtie_price - coins)
+                        typing("You are " + short + " coins short.")
                         time.sleep(2)
                     else:
                         clear()
@@ -387,6 +423,8 @@ def cityhub():
                     if coins < trusty_backpack_price:
                         clear()
                         typing("You do not have enough coins to buy this.\n")
+                        short = str(trusty_backpack_price - coins)
+                        typing("You are " + short + " coins short.")
                         time.sleep(2)
                     else:
                         clear()
@@ -401,6 +439,8 @@ def cityhub():
                     if coins < hiking_stick_price:
                         clear()
                         typing("You do not have enough coins to buy this.\n")
+                        short = str(hiking_stick_price - coins)
+                        typing("You are " + short + " coins short.")
                         time.sleep(2)
                     else:
                         clear()
