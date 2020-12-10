@@ -5,27 +5,40 @@ import time
 import random
 import os
 import game
-
-trophies = []
+import city
 
 def waiting_room():
-	typing("Ah, welcome back! You either lost or won.\n")
-	guides = ["Alice", "Jerry", "Brian", "Rachel", "Pepe", "Steve", "Hipster Dave", "Vadercat", "Albert", "Alfred", "Bruce", "Alfredo", "Phil", "Macy", "Santa", "The Easter Bunny", "The Thanksgiving Turkey", "Tammie", "Clyde", "Chris", "Joy", "Joe", "Benny", "Wolf", "Don", "Mr. Lemon", "Andrew", "Stephanie", "Michelle", "Laura", "Carl", "Harriet", "Danny", "Joey", "Jessie", "Becky", "Nicky", "Alex", "Frank", "Rich", "Dana", "Lily", "Sabrina", "Hilda", "Zelda", "Salem", "Amanda", "Harvey", "Mark", "Waldo", "Stefan", "Weasel", "Eddie", "Judy", "Myra", "Kimmy", "D.J.", "Fernando", "Jimmy", "John", "Mike", "Meatball Sub", "Mr. Subway", "Greg", "Netherite", "Enderman", "George,", "Adam", "Thomas", "Abraham", "Lincoln", "Denzel", "Zachary", "Garfield", "Peter", "Paige", "Andy", "Monty", "Roomba", "Arnold", "Terry", "Simon", "Mel", "Howie", "Heidi", "Frances", "Tommy", "Donald", "Kevin", "Harry", "Marv", "Fuller", "Buzz", "Buddy", "Narwahl", "Rudolph", "Michael", "Tiger", "Metta", "Tiki", "Lewis", "Clark", "Sacajawea", "Reginald", "Jacques", "Augustus", "Charlie", "A person with a very long name and this is it so yes this is his name and you should like it and if you don't deal with it and oh no i am running out of things to say so i will put in a bunch of filler words to make this longer and whoever came up with this name is the greatest person on earth no wait the galaxy actually the universe wow this name is very long but i am proud of it well i am running out of space so goodbye wait did i mention that i can count to 10 do you want to hear it ok you do 1 2 3 4 5 6 7 8 9 9 10 oh no i did it wrong i need to restart but it will take a long time 1   2   3   4   5   6   7   8   9   10 yay i am now done wow that was some superb counting ok goodbye for real oh just one more thing i will miss you a lot bye bye"]
-	randomguide = random.choice(guides)
-	typing("Welcome to Talera waiting room! Today, " + randomguide + " will be your guide.\n")
-	typing(randomguide + " - Let's see what trophies you currently have.\n")
-	if trophies == []:
-		typing("Hmm... seems like you do not have any trophies.\n")
-	else:
-		typing("Your trophies are:\n")
-		for t in trophies:
-			typing(t + "\n")
-	text.levels()
-	levelpick = ""
-	while levelpick not in ["1"]:
-		levelpick = input("> ")
-	if levelpick == "1":
-		mines()
+	typing("Ah, welcome back!\n")
+	#guides = ["Alice", "Jerry", "Brian", "Rachel", "Pepe", "Steve", "Hipster Dave", "Vadercat", "Albert", "Alfred", "Bruce", "Alfredo", "Phil", "Macy", "Santa", "The Easter Bunny", "The Thanksgiving Turkey", "Tammie", "Clyde", "Chris", "Joy", "Joe", "Benny", "Wolf", "Don", "Mr. Lemon", "Andrew", "Stephanie", "Michelle", "Laura", "Carl", "Harriet", "Danny", "Joey", "Jessie", "Becky", "Nicky", "Alex", "Frank", "Rich", "Dana", "Lily", "Sabrina", "Hilda", "Zelda", "Salem", "Amanda", "Harvey", "Mark", "Waldo", "Stefan", "Weasel", "Eddie", "Judy", "Myra", "Kimmy", "D.J.", "Fernando", "Jimmy", "John", "Mike", "Meatball Sub", "Mr. Subway", "Greg", "Netherite", "Enderman", "George,", "Adam", "Thomas", "Abraham", "Lincoln", "Denzel", "Zachary", "Garfield", "Peter", "Paige", "Andy", "Monty", "Roomba", "Arnold", "Terry", "Simon", "Mel", "Howie", "Heidi", "Frances", "Tommy", "Donald", "Kevin", "Harry", "Marv", "Fuller", "Buzz", "Buddy", "Narwahl", "Rudolph", "Michael", "Tiger", "Metta", "Tiki", "Lewis", "Clark", "Sacajawea", "Reginald", "Jacques", "Augustus", "Charlie", "A person with a very long name and this is it so yes this is his name and you should like it and if you don't deal with it and oh no i am running out of things to say so i will put in a bunch of filler words to make this longer and whoever came up with this name is the greatest person on earth no wait the galaxy actually the universe wow this name is very long but i am proud of it well i am running out of space so goodbye wait did i mention that i can count to 10 do you want to hear it ok you do 1 2 3 4 5 6 7 8 9 9 10 oh no i did it wrong i need to restart but it will take a long time 1   2   3   4   5   6   7   8   9   10 yay i am now done wow that was some superb counting ok goodbye for real oh just one more thing i will miss you a lot bye bye"]
+	#randomguide = random.choice(guides)
+	#typing("Welcome to Talera waiting room! Today, " + randomguide + " will be your guide.\n")
+	#typing(randomguide + " - Let's see what trophies you currently have.\n")
+	#if trophies == []:
+		#typing("Hmm... seems like you do not have any trophies.\n")
+	#else:
+		#typing("Your trophies are:\n")
+		#for t in trophies:
+			#typing(t + "\n")
+	typing("Would you like to go to the city or start another quest?\n")
+	text.city_or_quest()
+	city_or_quest = ""
+	while city_or_quest not in ["1", "2"]:
+		city_or_quest = input("> ")
+	if city_or_quest == "1":
+		clear()
+		typing("Ok! You want to go to the city!\n")
+		time.sleep(2)
+		city.city_teleport()
+	elif city_or_quest == "2":
+		clear()
+		text.levels()
+		levelpick = ""
+		while levelpick not in ["1", "2"]:
+			levelpick = input("> ")
+		if levelpick == "1":
+			mines()
+		elif levelpick == "2":
+			forest()
 
 typingspeed = 100
 
@@ -170,14 +183,18 @@ def mines_again():
 					typing("You attempt to run.\n")
 					if speed == 10:
 						typing("WHAT??? You have a speed level of 10! You successfully made it out of the cave.\n")
-						if "Talera Ruby" not in trophies:
-							trophies.append("Talera Ruby")
+						if "Talera Ruby" not in city.trophies:
+							city.trophies.append("Talera Ruby")
 							typing("You obtained the TALERA RUBY!\n")
+							typing("You have also earned 20 coins!\n")
+							city.coins = city.coins + 20
 							text.youwon()
 							typing("You may have won, but you can also get the shattered ruby pieces.\n")
 							functions.waitingroom_teleport()
 						else:
 							typing("Seems like you already have the TALERA RUBY inside your trophy room...\n")
+							typing("You still have earned 10 coins!\n")
+							city.coins = city.coins + 10
 							text.youwon()
 							functions.waitingroom_teleport()
 					else:
@@ -189,28 +206,37 @@ def mines_again():
 					typing("You attempt to find a safe place to hide.\n")
 					typing("You find a big rock to hide under.\n")
 					typing("The avalanche ends.\n")
-					if "Talera Ruby" not in trophies:
-						trophies.append("Talera Ruby")
+					if "Talera Ruby" not in city.trophies:
+						city.trophies.append("Talera Ruby")
 						typing("You obtained the TALERA RUBY!\n")
+						typing("You have also earned 20 coins!\n")
+						city.coins = city.coins + 20
 						text.youwon()
 						typing("You may have won, but you can also get the shattered ruby pieces.\n")
 						functions.waitingroom_teleport()
 					else:
 						typing("Seems like you already have the TALERA RUBY inside your trophy room...\n")
+						typing("You still have earned 10 coins!\n")
+						city.coins = city.coins + 10
 						functions.waitingroom_teleport()
 				elif avalanche == "3":
 					clear()
 					typing("You attempt to shield yourself with the ruby.\n")
 					typing("As the rocks fall on the ruby, it shatters to pieces.\n")
 					typing("Still, you have made it out of the mines.\n")
-					if "Shattered Ruby Pieces" not in trophies:
-						trophies.append("Shattered Ruby Pieces")
+					if "Shattered Ruby Pieces" not in city.trophies:
+						city.trophies.append("Shattered Ruby Pieces")
 						typing("You obtained the SHATTERED RUBY PIECES!\n")
+						typing("You have also earned 15 coins!\n")
+						city.coins = city.coins + 15
 						text.youwon()
 						typing("You may have won, but you can still get the full ruby.\n")
 						functions.waitingroom_teleport()
 					else:
 						typing("Seems like you already have the SHATTERED RUBY PIECES inside your trophy room...\n")
+						typing("You still have earned 8 coins!\n")
+						city.coins = city.coins + 8
+						functions.waitingroom_teleport()
 		elif rockmonster == "2":
 			clear()
 			typing("You ran away from the monster, but you forgot one key item...\n")
@@ -231,14 +257,18 @@ def mines_again():
 			typing("You attempt to run.\n")
 			if speed == 10:
 				typing("WHAT??? You have a speed level of 10! You successfully made it out of the cave.\n")
-				if "Talera Ruby" not in trophies:
-					trophies.append("Talera Ruby")
+				if "Talera Ruby" not in city.trophies:
+					city.trophies.append("Talera Ruby")
 					typing("You obtained the TALERA RUBY!\n")
+					typing("You have also earned 20 coins!\n")
+					city.coins = city.coins + 20
 					text.youwon()
 					typing("You may have won, but you can also get the shattered ruby pieces.\n")
 					functions.waitingroom_teleport()
 				else:
 					typing("Seems like you already have the TALERA RUBY inside your trophy room...\n")
+					typing("You still have earned 10 coins!\n")
+					city.coins = city.coins + 10
 					text.youwon()
 					functions.waitingroom_teleport()
 			else:
@@ -250,28 +280,37 @@ def mines_again():
 			typing("You attempt to find a safe place to hide.\n")
 			typing("You find a big rock to hide under.\n")
 			typing("The avalanche ends.\n")
-			if "Talera Ruby" not in trophies:
-				trophies.append("Talera Ruby")
+			if "Talera Ruby" not in city.trophies:
+				city.trophies.append("Talera Ruby")
 				typing("You obtained the TALERA RUBY!\n")
+				typing("You have also earned 20 coins!\n")
+				city.coins = city.coins + 20
 				text.youwon()
 				typing("You may have won, but you can also get the shattered ruby pieces.\n")
 				functions.waitingroom_teleport()
 			else:
 				typing("Seems like you already have the TALERA RUBY inside your trophy room...\n")
+				typing("You still have earned 10 coins!\n")
+				city.coins = city.coins + 10
 				functions.waitingroom_teleport()
 		elif avalanche == "3":
 			clear()
 			typing("You attempt to shield yourself with the ruby.\n")
 			typing("As the rocks fall on the ruby, it shatters to pieces.\n")
 			typing("Still, you have made it out of the mines.\n")
-			if "Shattered Ruby Pieces" not in trophies:
-				trophies.append("Shattered Ruby Pieces")
+			if "Shattered Ruby Pieces" not in city.trophies:
+				city.trophies.append("Shattered Ruby Pieces")
 				typing("You obtained the SHATTERED RUBY PIECES!\n")
+				typing("You have also earned 15 coins!\n")
+				city.coins = city.coins + 15
 				text.youwon()
 				typing("You may have won, but you can still get the full ruby.\n")
 				functions.waitingroom_teleport()
 			else:
 				typing("Seems like you already have the SHATTERED RUBY PIECES inside your trophy room...\n")
+				typing("You have still earned 8 coins!\n")
+				city.coins = city.coins + 8				
+				functions.waitingroom_teleport()
 	elif glass == "3":
 		clear()
 		typing("You admire the ruby.\n")

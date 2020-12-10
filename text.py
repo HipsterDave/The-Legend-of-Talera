@@ -120,3 +120,8 @@ def weapon_forest():
 
 def forestsign():
 	typing('''Welcome to THE FOREST!''')
+
+def city_or_quest():
+	print('''Here are your options:
+1) Go to the city
+2) Start another quest''')
