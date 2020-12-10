@@ -70,7 +70,8 @@ def hipsterdave():
 def levels():
 	print('''Here are your options:
 1) The Mines
-2) The Forest (UNDER CONSTRUCTION NOT FINISHED)''')
+2) The Forest (UNDER CONSTRUCTION NOT FINISHED)
+2) The Mounatins (UNDER CONSTRUCTION NOT FINISHED)''')
 
 def mine_entrance():
 	print('''Here are your options:
@@ -125,3 +126,6 @@ def city_or_quest():
 	print('''Here are your options:
 1) Go to the city
 2) Start another quest''')
+
+def mountain_range_mountains():
+	typing("Here are your options:\n1) Talera Mountain (The tallest mountain in Talera)\n2) The Widest Mountain\n3) A pile of dirt right next to you (The smallest mountain in Talera)\n")
