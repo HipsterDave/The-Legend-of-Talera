@@ -48,11 +48,12 @@ def cityhub():
         print("You have " + str(coins) + " coins.")
         print("1) Olga's Coffee House")
         print("2) Aaron's Apparel")
-        print("3) Trophy Room")
-        print("4) Inventory")
-        print("5) Exit")
+        print("3) The Docks")
+        print("4) Trophy Room")
+        print("5) Inventory")
+        print("6) Exit")
         city_options = ""
-        while city_options not in ["1", "2", "3", "4", "5"]:
+        while city_options not in ["1", "2", "3", "4", "5", "6"]:
             city_options = input("> ")
         if city_options == "1":
             clear()
@@ -410,6 +411,11 @@ def cityhub():
                         typing("Please press enter to continue.\n")
                         input("> ")
         elif city_options == "3":
+            print("Welcome to THE DOCKS!")
+            print("At the docks, you can go fishing for some loot, or have some tasty fish!")
+            print("You have " + str(coins) + " coins.")
+            print("1) Go Fishing - 5 coins")
+        elif city_options == "4":
             clear()
             typing("Welcome to your trophy room!\n")
             if trophies == []:
@@ -420,7 +426,7 @@ def cityhub():
                     typing(trophy)
             typing("Please press enter to continue.\n")
             input("> ")
-        elif city_options == "4":
+        elif city_options == "5":
             clear()
             typing("Here is your inventory:\n")
             print("Hat - " + hat)
@@ -431,7 +437,7 @@ def cityhub():
             print("Item - " + item)
             typing("Please press enter to continue.\n")
             input("> ")
-        elif city_options == "5":
+        elif city_options == "6":
             clear()
             typing("You have now left the city.\n")
             time.sleep(2)
