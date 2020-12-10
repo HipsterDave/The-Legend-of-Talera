@@ -415,6 +415,18 @@ def cityhub():
             print("At the docks, you can go fishing for some loot, or have some tasty fish!")
             print("You have " + str(coins) + " coins.")
             print("1) Go Fishing - 5 coins")
+            docks_options = ""
+            while docks_options not in ["1"]:
+                docks_options = input("> ")
+            if docks_options == "1":
+                if coins < 5:
+                    clear()
+                    typing("You do not have enough coins to buy this.\n")
+                    time.sleep(2)
+                else:
+                    clear()
+                    functions.textloading(1, "FISHING")
+                    fish_options = [""]
         elif city_options == "4":
             clear()
             typing("Welcome to your trophy room!\n")
