@@ -38,9 +38,11 @@ def tutorial():
 	typing("Here are the current levels!\n")
 	text.levels()
 	levelpick = ""
-	while levelpick not in ["1", "2"]:
+	while levelpick not in ["1", "2", "3"]:
 		levelpick = input("> ")
 	if levelpick == "1":
 		levels.mines()
 	elif levelpick == "2":
 		levels.forest()
+	elif levelpick == "3":
+		levels.mines()
