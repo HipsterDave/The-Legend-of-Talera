@@ -71,7 +71,7 @@ def levels():
 	print('''Here are your options:
 1) The Mines
 2) The Forest (UNDER CONSTRUCTION NOT FINISHED)
-2) The Mounatins (UNDER CONSTRUCTION NOT FINISHED)''')
+3) The Mounatins (UNDER CONSTRUCTION NOT FINISHED)''')
 
 def mine_entrance():
 	print('''Here are your options:
