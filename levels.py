@@ -22,10 +22,14 @@ def waiting_room():
 			typing(t + "\n")
 	text.levels()
 	levelpick = ""
-	while levelpick not in ["1"]:
+	while levelpick not in ["1", "2", "3"]:
 		levelpick = input("> ")
 	if levelpick == "1":
 		mines()
+	elif levelpick == "2":
+		forest()
+	elif levelpick == "3":
+		mountains()
 
 typingspeed = 100
 
@@ -268,10 +272,12 @@ def mines_again():
 				trophies.append("Shattered Ruby Pieces")
 				typing("You obtained the SHATTERED RUBY PIECES!\n")
 				text.youwon()
-				typing("You may have won, but you can still get the full ruby.\n")
-				functions.waitingroom_teleport()
+				if "Talera Ruby" not in trophies:
+					typing("You may have won, but you can still get the full ruby.\n")
+					functions.waitingroom_teleport()
 			else:
 				typing("Seems like you already have the SHATTERED RUBY PIECES inside your trophy room...\n")
+				functions.waitingroom_teleport()
 	elif glass == "3":
 		clear()
 		typing("You admire the ruby.\n")
@@ -331,3 +337,59 @@ def forest():
 		clear()
 		typing("You do not read the sign. It might have important information that will affect you later on.\n")
 	typing("You continue on the road.\n")
+
+def mountains():
+	clear()
+	typing("Before we travel to THE MOUNTAINS, we need to set your levels.\n")
+	time.sleep(1)
+	clear()
+	functions.textloading(3, "Rolling Dice")
+	levelnumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+	knowledge = random.choice(levelnumbers)
+	strength = random.choice(levelnumbers)
+	charisma = random.choice(levelnumbers)
+	speed = random.choice(levelnumbers)
+	typing("Your knowledge level is " + str(knowledge) + ".\n")
+	typing("Your strength level is " + str(strength) + ".\n")
+	typing("Your charisma level is " + str(charisma) + ".\n")
+	typing("Your speed level is " + str(speed) + ".\n")
+	averageleveladd = knowledge + strength + charisma + speed
+	averageleveldivide = averageleveladd/4
+	typing("Your average level is " + str(averageleveldivide) + ".\n")
+	typing("Please press enter to continue.\n")
+	input("> ")
+	clear()
+	functions.textloading(3, "Traveling to THE MOUNTAINS")
+	typing("Welcome to THE MOUNTAINS! Today, your goal is to obtain the DWARVEN CLUB.\n")
+	typing("Let's begin!\n")
+	typing("Up ahead, you see a mountain range with many mountains.\n")
+	typing("You must decide which mountain the dwarves live in.\n")
+	time.sleep(1)
+	clear()
+	functions.textloading(3, "CHOOSING MOUNTAIN")
+	typing("After hours of thinking about where dwarves may live, you narrow your options down to three choices.\n")
+	text.mountain_range_mountains()
+	chosen_mountain = ""
+	while chosen_mountain not in ["1", "2", "3"]:
+		chosen_mountain = input("> ")
+	if chosen_mountain == "3":
+		if knowledge > 4:
+			typing("With a knowledge level of " + str(knowledge) + ", I'd expect you to know better.\n")
+		else:
+			typing("That is not the correct mountain.\n")
+		text.youlost()
+		functions.waitingroom_teleport()
+	elif chosen_mountain == "1":
+		if speed < 5 and strength < 5:
+			typing("You try to climb up Talera Mountain, but according to your skill levels, you are too weak and slow to climb it before the dwarves run away with the club.\n")
+			text.youlost()
+			functions.waitingroom_teleport()
+		else:
+			typing("You hike towards Talera Mountain.\n")
+	elif chosen_mountain == "2":
+		if knowledge < 4:
+			typing("You try to climb the widest mountain in the mountain range, but since you have a knowledge level of " + str(knowledge) + ", you get lost.\n")
+			text.youlost()
+			functions.waitingroom_teleport()
+		else:
+			typing("You hike towards the widest mountain in the mountain range.\n")
