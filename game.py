@@ -45,4 +45,4 @@ def tutorial():
 	elif levelpick == "2":
 		levels.forest()
 	elif levelpick == "3":
-		levels.mines()
+		levels.mountains()
