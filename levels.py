@@ -191,7 +191,8 @@ def mines_again():
 							typing("You have also earned 20 coins!\n")
 							city.coins = city.coins + 20
 							text.youwon()
-							typing("You may have won, but you can also get the shattered ruby pieces.\n")
+							if "Shattered Ruby Pieces" not in city.trophies:
+								typing("You may have won, but you can also get the shattered ruby pieces.\n")
 							functions.waitingroom_teleport()
 						else:
 							typing("Seems like you already have the TALERA RUBY inside your trophy room...\n")
@@ -214,7 +215,8 @@ def mines_again():
 						typing("You have also earned 20 coins!\n")
 						city.coins = city.coins + 20
 						text.youwon()
-						typing("You may have won, but you can also get the shattered ruby pieces.\n")
+						if "Shattered Ruby Pieces" not in city.trophies:
+							typing("You may have won, but you can also get the shattered ruby pieces.\n")
 						functions.waitingroom_teleport()
 					else:
 						typing("Seems like you already have the TALERA RUBY inside your trophy room...\n")
@@ -232,7 +234,8 @@ def mines_again():
 						typing("You have also earned 15 coins!\n")
 						city.coins = city.coins + 15
 						text.youwon()
-						typing("You may have won, but you can still get the full ruby.\n")
+						if "Talera Ruby" not in city.trophies:
+							typing("You may have won, but you can still get the full ruby.\n")
 						functions.waitingroom_teleport()
 					else:
 						typing("Seems like you already have the SHATTERED RUBY PIECES inside your trophy room...\n")
@@ -288,6 +291,7 @@ def mines_again():
 				typing("You have also earned 20 coins!\n")
 				city.coins = city.coins + 20
 				text.youwon()
+			if "Shattered Ruby Pieces" not in city.trophies:
 				typing("You may have won, but you can also get the shattered ruby pieces.\n")
 				functions.waitingroom_teleport()
 			else:
@@ -306,7 +310,8 @@ def mines_again():
 				typing("You have also earned 15 coins!\n")
 				city.coins = city.coins + 15
 				text.youwon()
-				typing("You may have won, but you can still get the full ruby.\n")
+				if "Talera Ruby" not in city.trophies:
+					typing("You may have won, but you can still get the full ruby.\n")
 				functions.waitingroom_teleport()
 			else:
 				typing("Seems like you already have the SHATTERED RUBY PIECES inside your trophy room...\n")
