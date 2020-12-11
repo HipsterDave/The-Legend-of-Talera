@@ -466,6 +466,7 @@ def cityhub():
                 else:
                     clear()
                     functions.textloading(1, "FISHING")
+                    # hello
                     fish_options = [""]
         elif city_options == "4":
             clear()
