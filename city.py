@@ -474,9 +474,9 @@ def cityhub():
             if trophies == []:
                 typing("Hmm... Seems like you do not have any trophies. How do you fix this? GO DO SOME QUESTS!!!\n")
             else:
-                for trophy in trophies:
-                    typing("Here are your trophies:\n")
-                    typing(trophy)
+                typing("Here are your trophies:\n")
+                for t in trophies:
+                    typing(t + "\n")
             typing("Please press enter to continue.\n")
             input("> ")
         elif city_options == "5":
