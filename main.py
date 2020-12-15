@@ -7,4 +7,5 @@ import levels
 # Hello Again
 # Ok, I should stop saying hello.
 functions.clear()
+levels.waiting_room()
 functions.mainmenu()
