@@ -8,7 +8,13 @@ import levels
 import game
 
 typingspeed = 100
-coins = 0
+coins = 10000000000000000000000
+rustic_coins = 0
+gems = 0
+tuna = 0
+salmon = 0
+cod = 0
+clownfish = 0
 hat = "N/A"
 shirt = "Hand-me-down shirt from your neanderthal brother"
 pants = "Torn Jeans"
@@ -42,6 +48,12 @@ def cityhub():
     global shoes
     global outerwear
     global item
+    global rustic_coins
+    global gems
+    global tuna
+    global salmon
+    global cod
+    global clownfish
     while True:
         clear()
         print("Welcome to THE CITY!")
@@ -64,8 +76,9 @@ def cityhub():
             print("3) Cappuccino - 11 coins")
             print("4) Latte - 13 coins")
             print("5) Elvern Berry Cold Brew Tea - 16 coins")
+            print("6) Exit Shop")
             coffee = ""
-            while coffee not in ["1", "2", "3", "4", "5"]:
+            while coffee not in ["1", "2", "3", "4", "5", "6"]:
                 coffee = input("> ")
             if coffee == "1":
                 gas_station_coffee_price = 5
@@ -142,6 +155,9 @@ def cityhub():
                     typing("You drink your elvern berry cold brew tea. The sweetness along with some tartness just makes your day!\n")
                     typing("Please press enter to continue.\n")
                     input("> ")
+            elif coffee == "6":
+                clear()
+                typing("You have exited the shop.\n")
         elif city_options == "2":
             clear()
             print("Welcome to Aaron's Apparel!")
@@ -153,8 +169,9 @@ def cityhub():
             print("4) Shoes")
             print("5) Outerwear")
             print("6) Items")
+            print("7) Exit")
             apparel = ""
-            while apparel not in ["1", "2", "3", "4", "5", "6"]:
+            while apparel not in ["1", "2", "3", "4", "5", "6", "7"]:
                 apparel = input("> ")
             if apparel == "1":
                 clear()
@@ -450,24 +467,150 @@ def cityhub():
                         typing("A nice looking stick to support you while hiking.\n")
                         typing("Please press enter to continue.\n")
                         input("> ")
+            elif apparel == "7":
+                clear()
+                typing("You have exited the shop.\n")
         elif city_options == "3":
+            clear()
             print("Welcome to THE DOCKS!")
-            print("At the docks, you can go fishing for some loot, or have some tasty fish!")
+            print("At the docks, you can go fishing for some loot, or trade in your fish for some coins!")
             print("You have " + str(coins) + " coins.")
-            print("1) Go Fishing - 5 coins")
+            print("1) Go Fishing - 1 coin")
+            print("2) Go to the Fishmonger")
             docks_options = ""
-            while docks_options not in ["1"]:
+            while docks_options not in ["1", "2"]:
                 docks_options = input("> ")
             if docks_options == "1":
-                if coins < 5:
+                if coins < 1:
                     clear()
                     typing("You do not have enough coins to buy this.\n")
                     time.sleep(2)
                 else:
                     clear()
+                    coins = coins - 1
                     functions.textloading(1, "FISHING")
-                    # hello
-                    fish_options = [""]
+                    fish_options = ["Talera Ruby", "Rustic Coin", "Rustic Coin", "Rustic Coin", "Rustic Coin", "Rustic Coin", "Treasure Chest", "Treasure Chest", "Treasure Chest", "Old Boot", "Old Boot", "Old Boot", "Old Boot", "Old Boot", "Old Boot", "Old Boot", "Old Boot", "Old Boot", "Old Boot", "Wet Sock", "Wet Sock", "Wet Sock", "Wet Sock", "Wet Sock", "Wet Sock", "Wet Sock", "Someone's Underwear", "Someone's Underwear", "Someone's Underwear", "Someone's Underwear", "Someone's Underwear", "Someone's Underwear", "Another Fishing Rod", "Another Fishing Rod", "Another Fishing Rod", "Another Fishing Rod", "Another Fishing Rod", "Shark", "Shark", "Shark", "Shark", "Salmon", "Salmon", "Salmon", "Salmon", "Salmon", "Salmon", "Salmon", "Salmon", "Salmon", "Salmon", "Cod", "Cod", "Cod", "Cod", "Cod", "Cod", "Cod", "Cod", "Cod", "Cod", "Clownfish", "Clownfish", "Clownfish", "Clownfish", "Clownfish", "Clownfish", "Clownfish", "Clownfish", "Clownfish", "Clownfish", "Tuna", "Tuna", "Tuna", "Tuna", "Tuna", "Tuna", "Tuna", "Tuna", "Tuna", "Tuna"]
+                    random_item = random.choice(fish_options)
+                    if random_item == "Talera Ruby":
+                        numbers = ["1", "2", "3"]
+                        random_number = random.choice(numbers)
+                        if random_number == "3":
+                            if "Talera Ruby" not in trophies:
+                                typing("Woah! You got the Talera Ruby! I wonder how it got in the water...\n")
+                            else:
+                                typing("You got nothing.\n")
+                        else:
+                            typing("You got nothing.\n")
+                    elif random_item == "Rustic Coin":
+                        typing("Nice. You got a rustic coin. These are worth 5 coins. Adding 5 coins to your treasury...\n")
+                        coins = coins + 5
+                    elif random_item == "Treasure Chest":
+                        typing("Cool! You got a treasure chest! I wonder what could be inside?\n")
+                        loot = ["20 coins", "3 gems", "A seagull", "An old boot"]
+                        random_loot = random.choice(loot)
+                        if random_loot == "20 coins":
+                            typing("Nice! 20 coins were found in the chest!\n")
+                            coins = coins + 20
+                        elif random_loot == "3 gems":
+                            typing("Cool! You found 3 gems!\n")
+                            gems = gems + 3
+                        elif random_loot == "A seagull":
+                            typing("AHHHH!!! A SEAGULL!!!\n")
+                        elif random_loot == "An old boot":
+                            typing("You found an old boot. Worthless. Just throw it back in the water.\n")
+                    elif random_item == "Old Boot":
+                        typing("You got an old boot. Worthless. Just throw it back in the water.\n")
+                    elif random_item == "Wet Sock":
+                        typing("You got a wet sock. Worthless. Just throw it back in the water.\n")
+                    elif random_item == "Someone's Underwear":
+                        typing("Someone's underwear? Put that back in the water immediately. Hopefully the underwear is empty...\n")
+                    elif random_item == "Another Fishing Rod":
+                        typing("Hmm... Another fishing rod. How peculiar.\n")
+                    elif random_item == "Shark":
+                        typing("SHARK!!!!!\n")
+                        time.sleep(1)
+                        functions.textloading(3, "FIGHTING SHARK")
+                        typing("The shark ate 10 of your coins.\n")
+                        coins = coins - 10
+                    elif random_item == "Salmon":
+                        typing("Nice. You caught yourself some salmon.\n")
+                        salmon = salmon + 1
+                    elif random_item == "Cod":
+                        typing("Nice. You caught yourself some cod.\n")
+                        cod = cod + 1
+                    elif random_item == "Clownfish":
+                        typing("Nice. You caught yourself some clownfish.\n")
+                        clownfish = clownfish + 1
+                    elif random_item == "Tuna":
+                        typing("Nice. You caught yourself some tuna.\n")
+                        tuna = tuna + 1
+                    time.sleep(1)
+            if docks_options == "2":
+                clear()
+                print("Welcome to THE FISHMONGER!")
+                print("You have " + str(salmon) + " salmon.")
+                print("You have " + str(cod) + " cod.")
+                print("You have " + str(clownfish) + " clownfish.")
+                print("You have " + str(tuna) + " tuna.")
+                print("1) Salmon - 2 coins")
+                print("2) Cod - 1 coin")
+                print("3) Clownfish - 2 coins")
+                print("4) Tuna - 1 coin")
+                fishmonger = ""
+                while fishmonger not in ["1", "2", "3", "4"]:
+                    fishmonger = input("> ")
+                if fishmonger == "1":
+                    clear()
+                    typing("How much salmon would you like to sell?\n")
+                    salmon_sell = int(input("> "))
+                    salmon_price = 2
+                    if salmon < salmon_sell:
+                        clear()
+                        typing("You do not have enough salmon to sell this.\n")
+                    else:
+                        clear()
+                        coins = coins + (salmon_sell * salmon_price)
+                        typing("You have made " + str(salmon_sell * salmon_price) + " coins!")
+                        salmon = salmon - salmon_sell
+                if fishmonger == "2":
+                    clear()
+                    typing("How much cod would you like to sell?\n")
+                    cod_sell = int(input("> "))
+                    cod_price = 1
+                    if cod < cod_sell:
+                        clear()
+                        typing("You do not have enough cod to sell this.\n")
+                    else:
+                        clear()
+                        coins = coins + (cod_sell * cod_price)
+                        typing("You have made " + str(cod_sell * cod_price) + " coins!")
+                        cod = cod - cod_sell
+                if fishmonger == "3":
+                    clear()
+                    typing("How much clownfish would you like to sell?\n")
+                    clownfish_sell = int(input("> "))
+                    clownfish_price = 2
+                    if clownfish < clownfish_sell:
+                        clear()
+                        typing("You do not have enough clownfish to sell this.\n")
+                    else:
+                        clear()
+                        coins = coins + (clownfish_sell * clownfish_price)
+                        typing("You have made " + str(clownfish_sell * clownfish_price) + " coins!")
+                        clownfish = clownfish - clownfish_sell
+                if fishmonger == "4":
+                    clear()
+                    typing("How much tuna would you like to sell?\n")
+                    tuna_sell = int(input("> "))
+                    tuna_price = 1
+                    if tuna < tuna_sell:
+                        clear()
+                        typing("You do not have enough tuna to sell this.\n")
+                    else:
+                        clear()
+                        coins = coins + (tuna_sell * tuna_price)
+                        typing("You have made " + str(tuna_sell * tuna_price) + " coins!")
+                        tuna = tuna - tuna_sell       
         elif city_options == "4":
             clear()
             typing("Welcome to your trophy room!\n")
