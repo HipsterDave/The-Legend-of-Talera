@@ -7,6 +7,8 @@ import os
 import levels
 import game
 
+#hi
+
 typingspeed = 100
 coins = 10000000000000000000000
 rustic_coins = 0
