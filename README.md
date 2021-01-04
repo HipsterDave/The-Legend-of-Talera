@@ -35,14 +35,14 @@ More items are coming, so stay tuned!
 ### Beta 0.3
  - Added more hosts to the waiting room
  - Added a message if you do not have any trophies
-
+### Beta 0.4
+ - Replaced waiting room with city
 ## Future Updates
 In future updates, _The Legend of Talera_ will include:
  - New forest level
  - New mountain level
  - Save and load feature
  - Skip text feature
- - A surprise feature
 
 ## How to add to this code with Github
 First, pull the latest code.
@@ -65,4 +65,3 @@ After you finish your edits, commit and push. Add a message saying what you did,
  - [@Vadercat](https://repl.it/@Vadercat "Vadercat")
  - [@CodecusMaximus](https://repl.it/@CodecusMaximus "CodecusMaximus")
 ___
-Also, check out this project on [Github](https://github.com/HipsterDave/The-Legend-of-Talera).
