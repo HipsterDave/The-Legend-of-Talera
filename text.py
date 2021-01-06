@@ -128,4 +128,12 @@ def city_or_quest():
 2) Start another quest''')
 
 def mountain_range_mountains():
-	typing("Here are your options:\n1) Talera Mountain (The tallest mountain in Talera)\n2) The Widest Mountain\n3) A pile of dirt right next to you (The smallest mountain in Talera)\n")
+	print("Here are your options:\n1) Talera Mountain (The tallest mountain in Talera)\n2) Mount Goat (The widest mountain range in Talera)\n3) A pile of dirt right next to you (The smallest mountain in Talera)\n")
+
+def goat_king():
+	print('''Here are you options:
+1) Try and negotiate
+2) Fight
+3) Give a peace offering
+4) Run
+5) Ignore the goat. How good is he, anyway?''')
