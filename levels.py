@@ -88,7 +88,7 @@ def mines():
 	input("> ")
 	clear()
 	functions.textloading(3, "Traveling to THE MINES")
-	typing("Welcome to THE MINES! Today, your goal is the get the famous TALREA RUBY.\n")
+	typing("Welcome to THE MINES! Today, your goal is the get the famous TALERA RUBY.\n")
 	typing("You will need to get past rock monsters and big avalanches.\n")
 	typing("Let's begin!\n")
 	typing("As you walk to the entrance of the mine, you realize that your mine pass has expired. You are not allowed to go in the mines without one.\n")
@@ -427,10 +427,79 @@ def mountains():
 			functions.waitingroom_teleport()
 		else:
 			typing("You hike towards Talera Mountain.\n")
+			time.sleep(1)
+			clear()
+			typing("You made it to Talera Mountain. You need to climb to the top to reach the dwarves.\n")
+			typing("As you climb the mountain, you run into a disco yeti.\n")
+			typing("It tries to attack you.\n")
+			print("What do you do? Here are your options:")
+			print("1) Use your knowledge to formulate a plan.")
+			print("2) Fight")
+			print("3) Run")
+			print("4) Negotiate")
+			yeti_choice = ""
+			while yeti_choice not in ["1", "2", "3", "4"]:
+				yeti_choice = input("> ")
+			if yeti_choice == "1":
+				if knowledge >= 5:
+					typing("Since you have a knowledge level of " + str(knowledge) + ", you decide the best thing to do is to put on some disco music to distract the yeti.\n")
+				else:
+					typing("With a knowledge level of " + str(knowledge) + ", you are pretty dumb. For some reason, you try to get away by running into the yeti's cave.\n")
+					typing("That was a mistake.\n")
+					text.youlost()
+					functions.waitingroom_teleport()
+			elif yeti_choice == "2":
+				if strength >= 6:
+					typing("You are strong, so you knock the yeti out.\n")
+				else:
+					typing("Your levels say that you are weak. You know what happens.\n")
+					text.youlost()
+					functions.waitingroom_teleport()
+			elif yeti_choice == "3":
+				if speed >= 5:
+					typing("According to your levels, you are fast. You outrun the yeti.\n")
+				else:
+					typing("You are too slow.\n")
+					text.youlost()
+					functions.waitingroom_teleport()
+			elif yeti_choice == "4":
+				if charisma >= 4:
+					typing("You talk to the yeti.\n")
+					typing("He allows you to pass.\n")
+				else:
+					typing("You have a low charisma level, so he does not allow you to pass.\n")
+					text.youlost()
+					functions.waitingroom_teleport()
 	elif chosen_mountain == "2":
 		if knowledge < 4:
 			typing("You try to climb the widest mountain in the mountain range, but since you have a knowledge level of " + str(knowledge) + ", you get lost.\n")
 			text.youlost()
 			functions.waitingroom_teleport()
 		else:
-			typing("You hike towards the widest mountain in the mountain range.\n")
+			typing("You hike towards Mount Goat.\n")
+			time.sleep(1)
+			clear()
+			typing("You made it to Mount Goat. Time to climb!\n")
+			typing("You found a large area. It is a good place to take a break.\n")
+			typing("As you sit down, a goat walks up to you.\n")
+			typing("Goat - I AM KING GOAT! I COMMAND YOU TO GET OFF MY PROPERTY!\n")
+			text.goat_king()
+			goat_king = ""
+			while goat_king not in ["1", "2", "3", "4", "5"]:
+				goat_king = input("> ")
+			if goat_king == "1":
+				typing("You attempt to negotiate with the goat.\n")
+				if charisma > 6:
+					typing("You tell the goat that you are trying to get the DWARVEN CLUB.\n")
+					typing("Goat - Ah, yes... ")
+			elif goat_king == "2":
+				typing("You attempt to fight the goat.\n")
+			elif goat_king == "3":
+				typing("You attempt to give a peace offering to the goat.\n")
+			elif goat_king == "4":
+				typing("You attempt to run from the goat.\n")
+			elif goat_king == "5":
+				typing("You ignore the goat.\n")
+				typing("That was a mistake.\n")
+				text.youlost()
+				functions.waitingroom_teleport()

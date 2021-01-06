@@ -33,8 +33,10 @@ def tutorial():
 	typing("Now... Who are you?\n")
 	name = input("> ")
 	typing("Hello, " + name + "!\n")
-	typing("Since it is your first time playing, here are the rules.\n")
+	typing("Since it is your first time playing, here are the rules:\n")
+	time.sleep(1)
 	typing("Pick the right answer.\n")
+	time.sleep(1)
 	typing("Here are the current levels!\n")
 	text.levels()
 	levelpick = ""

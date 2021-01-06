@@ -57,6 +57,9 @@ For instance, a branch could look like:
 After you finish your edits, commit and push. Add a message saying what you did, and then make a pull request.
 
 ## Credits
+**Lead Developer**
+ - [@HipsterDave](https://repl.it/@HipsterDave "HipsterDave")
+
 **Game Development**
  - [@HipsterDave](https://repl.it/@HipsterDave "HipsterDave")
  - [@Vadercat](https://repl.it/@Vadercat "Vadercat")
