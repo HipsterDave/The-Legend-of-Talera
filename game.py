@@ -8,6 +8,7 @@ import levels
 
 typingspeed = 100
 
+
 def clear():
 	if sys.platform.startswith("linux"):
 		os.system("clear")
@@ -31,8 +32,8 @@ def tutorial():
 	typing("Ah, I see... This is your first time playing THE LEGEND OF TALERA!\n")
 	typing("Who am I? I am THE DEVELOPER! I will guide you through your quests!\n")
 	typing("Now... Who are you?\n")
-	name = input("> ")
-	typing("Hello, " + name + "!\n")
+	player_name = input("> ")
+	typing("Hello, " + player_name + "!\n")
 	typing("Since it is your first time playing, here are the rules:\n")
 	time.sleep(1)
 	typing("Pick the right answer.\n")
@@ -44,7 +45,12 @@ def tutorial():
 		levelpick = input("> ")
 	if levelpick == "1":
 		levels.mines()
+		return player_name
 	elif levelpick == "2":
 		levels.forest()
+		return player_name
 	elif levelpick == "3":
 		levels.mountains()
+		return player_name
+	
+#user_name = tutorial.player_name

@@ -7,6 +7,8 @@ import os
 import game
 import city
 
+# name = game.user_name
+
 def waiting_room():
 	typing("Ah, welcome back!\n")
 	#guides = ["Alice", "Jerry", "Brian", "Rachel", "Pepe", "Steve", "Hipster Dave", "Vadercat", "Albert", "Alfred", "Bruce", "Alfredo", "Phil", "Macy", "Santa", "The Easter Bunny", "The Thanksgiving Turkey", "Tammie", "Clyde", "Chris", "Joy", "Joe", "Benny", "Wolf", "Don", "Mr. Lemon", "Andrew", "Stephanie", "Michelle", "Laura", "Carl", "Harriet", "Danny", "Joey", "Jessie", "Becky", "Nicky", "Alex", "Frank", "Rich", "Dana", "Lily", "Sabrina", "Hilda", "Zelda", "Salem", "Amanda", "Harvey", "Mark", "Waldo", "Stefan", "Weasel", "Eddie", "Judy", "Myra", "Kimmy", "D.J.", "Fernando", "Jimmy", "John", "Mike", "Meatball Sub", "Mr. Subway", "Greg", "Netherite", "Enderman", "George,", "Adam", "Thomas", "Abraham", "Lincoln", "Denzel", "Zachary", "Garfield", "Peter", "Paige", "Andy", "Monty", "Roomba", "Arnold", "Terry", "Simon", "Mel", "Howie", "Heidi", "Frances", "Tommy", "Donald", "Kevin", "Harry", "Marv", "Fuller", "Buzz", "Buddy", "Narwahl", "Rudolph", "Michael", "Tiger", "Metta", "Tiki", "Lewis", "Clark", "Sacajawea", "Reginald", "Jacques", "Augustus", "Charlie", "A person with a very long name and this is it so yes this is his name and you should like it and if you don't deal with it and oh no i am running out of things to say so i will put in a bunch of filler words to make this longer and whoever came up with this name is the greatest person on earth no wait the galaxy actually the universe wow this name is very long but i am proud of it well i am running out of space so goodbye wait did i mention that i can count to 10 do you want to hear it ok you do 1 2 3 4 5 6 7 8 9 9 10 oh no i did it wrong i need to restart but it will take a long time 1   2   3   4   5   6   7   8   9   10 yay i am now done wow that was some superb counting ok goodbye for real oh just one more thing i will miss you a lot bye bye"]
@@ -379,6 +381,7 @@ def forest():
 	typing("You continue on the road.\n")
 
 def mountains():
+	#global name
 	clear()
 	typing("Before we travel to THE MOUNTAINS, we need to set your levels.\n")
 	time.sleep(1)
@@ -491,15 +494,153 @@ def mountains():
 				typing("You attempt to negotiate with the goat.\n")
 				if charisma > 6:
 					typing("You tell the goat that you are trying to get the DWARVEN CLUB.\n")
-					typing("Goat - Ah, yes... ")
+					typing("Goat - Ah, yes... \n")
+					typing("Goat - I have heard rumors that something has happened to it. You may want to go check it out.\n")
+					typing("The KING GOAT allows you to pass.\n")
+				else:
+					typing("Goat - Nice try.\n")
+					text.youlost()
+					functions.waitingroom_teleport()
 			elif goat_king == "2":
 				typing("You attempt to fight the goat.\n")
+				if strength > 5:
+					typing("You are strong enough to beat the goat.\n")
+				else:
+					typing("With the goat's horns, it charges at you.\n")
+					typing("You have been beat by a goat.\n")
+					text.youlost()
+					functions.waitingroom_teleport()
 			elif goat_king == "3":
 				typing("You attempt to give a peace offering to the goat.\n")
+				if knowledge > 4:
+					typing("Goat - I will allow you to pass through my territory, as long as you do not harm any of us goats.\n")
+				else:
+					typing("The goat denies.\n")
+					text.youlost()
+					functions.waitingroom_teleport()
 			elif goat_king == "4":
 				typing("You attempt to run from the goat.\n")
+				if speed > 5:
+					typing("You successfully outrun the goat. He is no match for you!\n")
+				else:
+					typing("This goat is faster than you. With a speed level of " + str(speed) + ", never try to outrun a goat.")
+					text.youlost()
+					functions.waitingroom_teleport()
 			elif goat_king == "5":
 				typing("You ignore the goat.\n")
 				typing("That was a mistake.\n")
+				text.youlost()
+				functions.waitingroom_teleport()
+	typing("Now that you have successfully got past your obstacle, you can continue on to the top of the mountain.\n")
+	time.sleep(2)
+	clear()
+	typing("You are almost at the top of the mountain, but there is a fork. One path leads to the tip-top of the mountain, while the other leads to a cave. Where would you like to go?\n")
+	print("1) The tip-top of the mountain\n2) The cave")
+	split_in_road = ""
+	while split_in_road not in ["1", "2"]:
+		split_in_road = input("> ")
+	clear()
+	if split_in_road == "1":
+		typing("You continue on to the tip-top of the mountain.\n")
+		time.sleep(1)
+		typing("You reach the tip-top of the mountain, but you realize that it is too tiny to hold a group of dwarves.\n")
+		text.youlost()
+		functions.waitingroom_teleport()
+	elif split_in_road == "2":
+		typing("You walk into the cave.\n")
+		time.sleep(1)
+		typing("It is dark, so you rub some sticks together to light a fire.\n")
+		time.sleep(1)
+		clear()
+		functions.textloading(2, "LIGHTING FIRE")
+		typing("You successfully light a fire to guide you through the cave.\n")
+		typing("You walk around the cave, but don't see anything.\n")
+		time.sleep(1)
+		clear()
+		typing("After about a half-hour, you hear voices.\n")
+		typing("Voice 1 - Ah, yes. A very fantastic club this is!\n")
+		typing("Voice 2 - I can't believe it's ours now!\n")
+		typing("The second voice confuses you. Didn't the dwarves already own a club?\n")
+		typing("You walk over towards the voices to find some robbers holding the DWARVEN CLUB.\n")
+		time.sleep(1)
+		clear()
+		typing("The robbers see you.\n")
+		typing("Robber 1 - Hey, Gerald. We've got ourselves our first test subject.\n")
+		typing("Gerald - I've got the club. Shall I knock him, Rob?\n")
+		typing("Rob - Yeah!\n")
+		typing("The robbers knock you out.\n")
+		time.sleep(1)
+		clear()
+		typing("When you wake up, you find yourself in a small, rundown shack with Rob and Gerald looking down at you.\n")
+		typing("Gerald - Wow! This club actually has powers! It knocked him out with the lightest touch.\n")
+		typing("\"Oh no,\" you say to yourself.\n")
+		typing("You were wondering why this club was so important.\n")
+		time.sleep(1)
+		clear()
+		typing("All of a sudden, Gerald puts the club down and walks over to you.\n")
+		typing("It appears that he wants to tie you up in a chair.\n")
+		typing("You also notice some potions on a shelf next to you.\n")
+		typing("You realize that you can escape the shack using one of these things.\n")
+		typing("Which would you like to use?\n")
+		print("1) Grab the club and escape with it\n2) Pick up a random potion and see what it does")
+		shack_escape = ""
+		while shack_escape not in ["1", "2"]:
+			shack_escape = input("> ")
+		clear()
+		if shack_escape == "1":
+			typing("You grab the DWARVEN CLUB, smash (or because the club is magic, lightly touch) the wall and run outside.\n")
+			typing("Rob and Gerald hop on horses and chase after you.\n")
+			typing("They chase you until you get cornered.\n")
+			typing("Rob - It's over now.\n")
+			time.sleep(1)
+			clear()
+			typing("When all seems lost, some police officers on horses ride up and arrest Rob and Gerald for not only chasing you and stealing the club, but also because they tried to steal the TALERA RUBY and the ELVERN FLUTE.\n")
+			typing("Police Officer - It seems as though these guys were trying to steal your club.\n")
+			typing("You - Uhh, yes. This was one-hundred percent my club...\n")
+			typing("Police Officer - Anyway, we should probably get these robbers to jail.\n")
+			typing("The police officers ride away with Rob and Gerald.\n")
+			typing("You are excited to obtain the DWARVEN CLUB.\n")
+			text.youwon()
+			if "DWARVEN CLUB" not in city.trophies:
+				city.trophies.append("DWARVEN CLUB")
+				typing("Now that the DWARVEN CLUB is yours, you obtain 20 coins.\n")
+				city.coins += 20
+			else:
+				typing("Hmm. It looks like you already have the DWARVEN CLUB in your trophy room.\n")
+				typing("You have still earned 10 coins.\n")
+				city.coins += 10
+			if "NON-MAGIC DWARVEN CLUB" not in city.trophies:
+				typing("You can still get the DWARVEN CLUB without its magic powers.\n")
+			functions.waitingroom_teleport()
+		elif shack_escape == "2":
+			typing("You pick up a random potion and throw it towards Rob and Gerald.\n")
+			list_of_numbers = ["1", "2", "3"]
+			randomnumber = random.choice(list_of_numbers)
+			if randomnumber == "1":
+				typing("Unfortunately, the potion you threw was an invincibility potion.\n")
+				text.youlost()
+				functions.waitingroom_teleport()
+			elif randomnumber == "2":
+				typing("The potion seems to have made a cloud of smoke between you and the robbers.\n")
+				typing("You still see the DWARVEN CLUB, so you grab it and turn around, only to find the potion shelf.\n")
+				typing("The door is on the other side of the smoke.\n")
+				typing("You smash the club through the shelf and through the wall to successfully break out of the shack.\n")
+				typing("However, when you smashed through the potion shelf, you smashed a potion that made the DWARVEN CLUB lose its magic.\n")
+				typing("Though this is true, you have successfully escaped the robbers!\n")
+				text.youwon()
+				if "NON-MAGIC DWARVEN CLUB" not in city.trophies:
+					city.trophies.append("NON-MAGIC DWARVEN CLUB")
+					typing("You have also earned 10 coins.\n")
+					city.coins = city.coins + 10
+				else:
+					typing("It seems as though the NON-MAGIC DWARVEN CLUB is already in your trophy room.\n")
+					typing("You have still earned 5 coins.")
+					city.coins = city.coins + 5
+				if "DWARVEN CLUB" in city.trophies:
+					typing("You may have won, but you can still get the DWARVEN CLUB with its magic powers.\n")
+				functions.waitingroom_teleport()
+			elif randomnumber == "3":
+				typing("The potion you threw was just a glass of water.\n")
+				typing("It didn't do much.\n")
 				text.youlost()
 				functions.waitingroom_teleport()
