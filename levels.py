@@ -21,7 +21,7 @@ def waiting_room():
 		#typing("Your trophies are:\n")
 		#for t in trophies:
 			#typing(t + "\n")
-	typing("Would you like to go to the city or start another quest?\n")
+	typing("Would you like to go to the city, start another quest, or take a break and leave the game?\n")
 	text.city_or_quest()
 	city_or_quest = ""
 	while city_or_quest not in ["1", "2"]:
@@ -43,6 +43,17 @@ def waiting_room():
 			forest()
 		elif levelpick == "3":
 			mountains()
+	elif city_or_quest == "3":
+		typing("Are you sure you want to leave? You will lose all of your progress. (y/n)\n")
+		exit_confirm = ""
+		while exit_confirm not in ["y", "n"]:
+			exit_confirm = input("> ")
+		if exit_confirm == "y":
+			typing("Okay, then. See you next time!\n")
+			exit()
+		elif exit_confirm == "n":
+			typing("Okay. ")
+			functions.waitingroom_teleport()
 
 typingspeed = 100
 
@@ -51,6 +62,8 @@ def clear():
 		os.system("clear")
 	elif sys.platform.startswith("win32"):
 		os.system("cls")
+	elif sys.platform.startswith("darwin"):
+		os.system("clear")
 
 def typing(text):
 	for letter in text:
@@ -381,7 +394,6 @@ def forest():
 	typing("You continue on the road.\n")
 
 def mountains():
-	#global name
 	clear()
 	typing("Before we travel to THE MOUNTAINS, we need to set your levels.\n")
 	time.sleep(1)
@@ -644,3 +656,27 @@ def mountains():
 				typing("It didn't do much.\n")
 				text.youlost()
 				functions.waitingroom_teleport()
+
+def temple_level():
+	clear()
+	typing("Before we travel to THE TEMPLE, we need to set your levels.\n")
+	time.sleep(1)
+	clear()
+	functions.textloading(3, "Rolling Dice")
+	levelnumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+	knowledge = random.choice(levelnumbers)
+	strength = random.choice(levelnumbers)
+	charisma = random.choice(levelnumbers)
+	speed = random.choice(levelnumbers)
+	typing("Your knowledge level is " + str(knowledge) + ".\n")
+	typing("Your strength level is " + str(strength) + ".\n")
+	typing("Your charisma level is " + str(charisma) + ".\n")
+	typing("Your speed level is " + str(speed) + ".\n")
+	averageleveladd = knowledge + strength + charisma + speed
+	averageleveldivide = averageleveladd/4
+	typing("Your average level is " + str(averageleveldivide) + ".\n")
+	typing("Please press enter to continue.\n")
+	input("> ")
+	clear()
+	functions.textloading(3, "Traveling to THE TEMPLE")
+	typing("Welcome to THE TEMPLE, long lost in the jungle.\n")

@@ -81,7 +81,7 @@ def levels():
 1) The Mines
 2) The Forest (UNDER CONSTRUCTION NOT FINISHED)
 3) The Mountains
-4) The Temple (NOT STARTED)
+4) The Temple (UNDER CONSTRUCTION NOT FINISHED)
 5) The Ocean (NOT STARTED)''')
 
 def mine_entrance():
@@ -136,7 +136,8 @@ def forestsign():
 def city_or_quest():
 	print('''Here are your options:
 1) Go to the city
-2) Start another quest''')
+2) Start another quest
+3) Quit the game''')
 
 def mountain_range_mountains():
 	print("Here are your options:\n1) Talera Mountain (The tallest mountain in Talera)\n2) Mount Goat (The widest mountain range in Talera)\n3) A pile of dirt right next to you (The smallest mountain in Talera)\n")
