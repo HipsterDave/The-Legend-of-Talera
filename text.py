@@ -80,7 +80,7 @@ def levels():
 	print('''Here are your options:
 1) The Mines
 2) The Forest (UNDER CONSTRUCTION NOT FINISHED)
-3) The Mounatins
+3) The Mountains
 4) The Temple (NOT STARTED)
 5) The Ocean (NOT STARTED)''')
 
