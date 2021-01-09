@@ -1,6 +1,6 @@
 # Welcome!
 
-![Legend of Talera](images/title.png)
+![Legend of Talera](images/legend_of_talera.png)
 Welcome to this fabulous text adventure! In _The Legend of Talera_, you are an adventurer that will collect different artifacts from places around Talera.
 
 There are four skills you will get a level from 1 - 10 for. These skills are **knowledge**, **strength**, **charisma**, and **speed**. It may look something like this:
@@ -25,6 +25,8 @@ These are the basics of this game. Happy playing!
 Here are the current items you can get:
  - Talera Ruby
  - Shattered Ruby Pieces
+ - Dwarven Club
+ - Non-magic Dwarven Club
 
 More items are coming, so stay tuned!
 ## Updates
@@ -37,10 +39,13 @@ More items are coming, so stay tuned!
  - Added a message if you do not have any trophies
 ### Beta 0.4
  - Replaced waiting room with city
+### Beta 0.5
+ - Added the mountains level
 ## Future Updates
 In future updates, _The Legend of Talera_ will include:
  - New forest level
- - New mountain level
+ - New temple level
+ - New ocean level that requires a diving suit
  - Save and load feature
  - Skip text feature
 

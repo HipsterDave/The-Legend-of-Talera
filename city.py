@@ -18,9 +18,9 @@ salmon = 0
 cod = 0
 clownfish = 0
 hat = "N/A"
-shirt = "Hand-me-down shirt from your neanderthal brother"
+shirt = "Hand-me-down shirt from your older neanderthal brother"
 pants = "Torn Jeans"
-shoes = "None (Looks like you're a hobbit)"
+shoes = "N/A (Looks like you're a hobbit)"
 outerwear = "N/A"
 item = "Distorted Stick"
 trophies = []
@@ -613,7 +613,8 @@ def cityhub():
 						clear()
 						coins = coins + (tuna_sell * tuna_price)
 						typing("You have made " + str(tuna_sell * tuna_price) + " coins!")
-						tuna = tuna - tuna_sell       
+						tuna = tuna - tuna_sell
+					time.sleep(1)
 		elif city_options == "4":
 			clear()
 			typing("Welcome to your trophy room!\n")

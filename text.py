@@ -64,6 +64,15 @@ def hipsterdave():
 |  |  | |  | |  |    /  \ |  |  |  |   [_ |    \ |     ||  _  ||  :  ||   [_ 
 |  |  | |  | |  |    \    |  |  |  |     ||  .  \|     ||  |  | \   / |     |
 |__|__||____||__|     \___|  |__|  |_____||__|\_||_____||__|__|  \_/  |_____|
+                                                                             
+                and                                                     
+ __ __   ____  ___      ___  ____     ___   ____  ______
+|  |  | /    ||   \    /  _]|    \   /  _] /    ||      |
+|  |  ||  o  ||    \  /  [_ |  D  ) /  |  |  o  ||      |
+|  |  ||     ||  D  ||    _]|    / |   |  |     ||_|  |_|
+|  :  ||  _  ||     ||   [_ |    \ |   |_ |  _  |  |  |
+ \   / |  |  ||     ||     ||  .  \|     ||  |  |  |  |
+  \_/  |__|__||_____||_____||__|\_||_____||__|__|  |__|
                                                                                                                                                                                                                                            
 ''')
 
@@ -71,7 +80,9 @@ def levels():
 	print('''Here are your options:
 1) The Mines
 2) The Forest (UNDER CONSTRUCTION NOT FINISHED)
-3) The Mounatins (UNDER CONSTRUCTION NOT FINISHED)''')
+3) The Mountains
+4) The Temple (NOT STARTED)
+5) The Ocean (NOT STARTED)''')
 
 def mine_entrance():
 	print('''Here are your options:
