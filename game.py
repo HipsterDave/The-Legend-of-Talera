@@ -14,6 +14,8 @@ def clear():
 		os.system("clear")
 	elif sys.platform.startswith("win32"):
 		os.system("cls")
+	elif sys.platform.startswith("darwin"):
+		os.system("clear")
 
 def typing(text):
 	for letter in text:
@@ -41,16 +43,13 @@ def tutorial():
 	typing("Here are the current levels!\n")
 	text.levels()
 	levelpick = ""
-	while levelpick not in ["1", "2", "3"]:
+	while levelpick not in ["1", "2", "3", "4"]:
 		levelpick = input("> ")
 	if levelpick == "1":
 		levels.mines()
-		return player_name
 	elif levelpick == "2":
 		levels.forest()
-		return player_name
 	elif levelpick == "3":
 		levels.mountains()
-		return player_name
-	
-#user_name = tutorial.player_name
+	elif levelpick == "4":
+		levels.temple_level()
