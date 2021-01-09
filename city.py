@@ -613,7 +613,8 @@ def cityhub():
 						clear()
 						coins = coins + (tuna_sell * tuna_price)
 						typing("You have made " + str(tuna_sell * tuna_price) + " coins!")
-						tuna = tuna - tuna_sell       
+						tuna = tuna - tuna_sell
+					time.sleep(1)
 		elif city_options == "4":
 			clear()
 			typing("Welcome to your trophy room!\n")

@@ -25,6 +25,8 @@ These are the basics of this game. Happy playing!
 Here are the current items you can get:
  - Talera Ruby
  - Shattered Ruby Pieces
+ - Dwarven Club
+ - Non-magic Dwarven Club
 
 More items are coming, so stay tuned!
 ## Updates
@@ -37,10 +39,13 @@ More items are coming, so stay tuned!
  - Added a message if you do not have any trophies
 ### Beta 0.4
  - Replaced waiting room with city
+### Beta 0.5
+ - Added the mountains level
 ## Future Updates
 In future updates, _The Legend of Talera_ will include:
  - New forest level
- - New mountain level
+ - New temple level
+ - New ocean level that requires a diving suit
  - Save and load feature
  - Skip text feature
 
