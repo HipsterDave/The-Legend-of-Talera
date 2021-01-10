@@ -1,0 +1,17 @@
+[project]
+id = "HipsterDave/The-Legend-of-Talera"
+name = "The Legend of Talera"
+version = "1.0.0"
+
+[build]
+exclude = [
+    ".vscode",
+    "__pycache__"
+]
+
+[[build.buildpacks]]
+id = "jkutner/web-tty"
+
+[[build.env]]
+name='WEB_TTY_CMD'
+value="python main.py"
