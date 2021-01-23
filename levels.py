@@ -838,7 +838,7 @@ def temple_level():
 		typing("You hold the statue tight in your arms as you barely land on the first rock.\n")
 		typing("After several minutes, you make it to the other side, with the GOLDEN MONKEY STATUE safe and sound.\n")
 	typing("Then, lava starts rushing after you.\n")
-	typing("Even if you have a knowledge level of 1, you know there is only on thing to do:\n")
+	typing("Even if you have a knowledge level of 1, you know there is only one thing to do:\n")
 	typing("RUN.\n")
 	time.sleep(2)
 	clear()
