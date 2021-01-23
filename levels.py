@@ -35,7 +35,7 @@ def waiting_room():
 		clear()
 		text.levels()
 		levelpick = ""
-		while levelpick not in ["1", "2", "3"]:
+		while levelpick not in ["1", "2", "3", "4"]:
 			levelpick = input("> ")
 		if levelpick == "1":
 			mines()
@@ -43,6 +43,8 @@ def waiting_room():
 			forest()
 		elif levelpick == "3":
 			mountains()
+		elif levelpick == "4":
+			temple_level()
 	elif city_or_quest == "3":
 		typing("Are you sure you want to leave? You will lose all of your progress. (y/n)\n")
 		exit_confirm = ""
@@ -52,7 +54,7 @@ def waiting_room():
 			typing("Okay, then. See you next time!\n")
 			exit()
 		elif exit_confirm == "n":
-			typing("Okay. ")
+			typing("Okay.\n")
 			functions.waitingroom_teleport()
 
 typingspeed = 100
@@ -436,6 +438,7 @@ def mountains():
 		text.youlost()
 		functions.waitingroom_teleport()
 	elif chosen_mountain == "1":
+		return int(chosen_mountain)
 		if speed < 5 and strength < 5:
 			typing("You try to climb up Talera Mountain, but according to your skill levels, you are too weak and slow to climb it before the dwarves run away with the club.\n")
 			text.youlost()
@@ -680,3 +683,176 @@ def temple_level():
 	clear()
 	functions.textloading(3, "Traveling to THE TEMPLE")
 	typing("Welcome to THE TEMPLE, long lost in the jungle.\n")
+	typing("Today, your goal is to obtain the GOLDEN MONKEY STATUE.\n")
+	typing("You will have to avoid traps that can be found within the temple.\n")
+	typing("To start, you will have to enter the temple, obviously.\n")
+	typing("This is your final chance to chicken out if you want. Do you want to chicken out? (y/n)\n")
+	chicken_out = ""
+	while chicken_out not in ["y", "n"]:
+		chicken_out = input("> ")
+	clear()
+	if chicken_out == "y":
+		text.youlost()
+		functions.waitingroom_teleport()
+	elif chicken_out == "n":
+		typing("Good choice!\n")
+	typing("You have entered the temple successfully.\n")
+	time.sleep(2)
+	clear()
+	typing("As you walk through the temple, you accidentally step on the wrong tile.\n")
+	typing("The walls start closing in on you!\n")
+	typing("If you don't do anything, then the walls will close in on you. However, you see an opening above the wall that you can just barely fit in.\n")
+	typing("Which option do you choose?\n")
+	print("1) Let the walls close in on you\n2) Hide in the small opening.")
+	wall_close = ""
+	while wall_close not in ["1", "2"]:
+		wall_close = input("> ")
+	clear()
+	if wall_close == "2":
+		typing("You successfully jump into the opening.\n")
+		typing("However, you remember that you are claustrophobic. You do not like small spaces.\n")
+		typing("Also, you got stuck.\n")
+		text.youlost()
+		functions.waitingroom_teleport()
+	elif wall_close == "1":
+		typing("You stand and let the walls close.\n")
+		typing("That's when you discover a flaw in the temple's design.\n")
+		typing("The walls don't close all the way.\n")
+		typing("You are safe!\n")
+	typing("Now that you have avoided the walls, you can continue on to find your treasure.\n")
+	time.sleep(1)
+	clear()
+	typing("It turns out that you are bad at figuring out where to step. You stepped on the wrong tile AGAIN!\n")
+	typing("This time, its evil hamsters you have to look out for.\n")
+	typing("There are a few things you can do:\n")
+	print("1) Fight\n2) Run\n3) Negotiate\n4) Use your brainy powers.")
+	evil_hamsters = ""
+	while evil_hamsters not in ["1", "2", "3", "4"]:
+		evil_hamsters = input("> ")
+	clear()
+	if evil_hamsters == "1":
+		typing("You attempt to fight the hamsters.\n")
+		if strength >= 3:
+			typing("You are strong enough to defeat the hamsters.\n")
+		else:
+			typing("Apparently, you are too weak to defeat those evil yet adorable hamsters.\n")
+			typing("How embarrassing!\n")
+			text.youlost()
+			functions.waitingroom_teleport()
+	elif evil_hamsters == "2":
+		typing("You attempt to run from the hamsters.\n")
+		some_random_numbers = ["1", "2"]
+		a_random_number = random.choice(some_random_numbers)
+		if a_random_number == "1":
+			typing("Unfortunately, some doors close, leaving you in a small room with the hamsters.\n")
+			text.youlost()
+			functions.waitingroom_teleport()
+		elif a_random_number == "2":
+			if speed >= 3:
+				typing("You outrun the hamsters!\n")
+			else:
+				typing("The hamsters are too fast for you.\n")
+				text.youlost()
+				functions.waitingroom_teleport()
+	elif evil_hamsters == "3":
+		typing("You attempt to negotiate with the hamsters.\n")
+		typing("Since they are hamsters, they don't understand English, Español, Français, or even 中文!\n")
+		text.youlost()
+		functions.waitingroom_teleport()
+	elif evil_hamsters == "4":
+		typing("You attempt to use your knowledge to come up with a plan.\n")
+		if knowledge >= 3:
+			typing("You look around and notice some hamster food on a nearby shelf.\n")
+			typing("Knowing that animals do anything for food, you chase them over to the hamster food.\n")
+			typing("It's the perfect distraction.\n")
+		else:
+			typing("Since you have a knowledge level of %s, you are not the smartest and try to pick up the hamsters so they won't run at you.\n" % knowledge)
+			text.youlost()
+			functions.waitingroom_teleport()
+	typing("Now, you can continue on your journey through the temple.\n")
+	time.sleep(2)
+	clear()
+	typing("The floor must not like you, because you step in some quicksand.\n")
+	typing("If you're not careful, then you will get stuck inside it...forever!\n")
+	typing("You must make a decision quick!\n")
+	print("Here are your options:\n1) Wiggle out\n2) Grab something and use it to pull yourself out\n3) Call for help")
+	quicksand = ""
+	# x = 1
+	while quicksand not in ["1", "2", "3"]:
+		quicksand = input("> ")
+		# x += 1
+		# time.sleep(1)
+		# if x > 9:
+		# 	clear()
+		# 	typing("Unfortunately, you ran out of time to make a decision.\n")
+		# 	text.youlost()
+		# 	functions.waitingroom_teleport()
+	clear()
+	if quicksand == "1":
+		typing("You try to wiggle yourself out.\n")
+		if strength > 7:
+			typing("You are very strong, so you are able to wiggle yourself out.\n")
+		else:
+			typing("You are no match for the quicksand.\n")
+			text.youlost()
+			functions.waitingroom_teleport()
+	elif quicksand == "2":
+		typing("You look around for something to grab.\n")
+		typing("You find a nearby rope that you can reach.\n")
+		typing("You successfully pull yourself out of the quicksand.\n")
+	elif quicksand == "3":
+		typing("You call for help.\n")
+		typing("Why would there be someone in the temple who would help you out?\n")
+		if knowledge > 5:
+			typing("With a knowledge level of %s, I'd expect you to know better.\n" % knowledge)
+		text.youlost()
+		functions.waitingroom_teleport()
+	typing("Now you can keep searching for the GOLDEN MONKEY STATUE.\n")
+	time.sleep(1)
+	clear()
+	typing("You walk into a room that is pitch black.\n")
+	typing("You feel around for a light switch.\n")
+	typing("Once you find one, you flip it and find the GOLDEN MONKEY STATUE sitting on a pedestal in the middle of the room.\n")
+	typing("You walk over and pick it up.\n")
+	typing("Then, the temple starts collapsing!\n")
+	typing("You run with the statue outside the room.\n")
+	typing("The area that was once quicksand is now LAVA!\n")
+	typing("You have to come up with an idea to get across.\n")
+	typing("You remember that the rope you used earlier to pull yourself out of the quicksand is still there.\n")
+	typing("You can use it to swing across the lava pool.\n")
+	typing("However, you also find rocks in the lava that are big enough for you to jump on and make a path.\n")
+	typing("This is a risky option, though. The rope swinging seems safer.\n")
+	typing("Which option do you choose?\n")
+	print("1) Swing with the rope\n2) Jump across using the rocks.")
+	lava_lake = ""
+	while lava_lake not in ["1", "2"]:
+		lava_lake = input("> ")
+	clear()
+	if lava_lake == "1":
+		typing("You set down the statue to toss the rope onto a hook on the celing.\n")
+		typing("Then, you swing across!\n")
+		typing("Once you make it across, you look behind you to see the floor on the other side starting to flood and burn, along with the GOLDEN MONKEY STATUE you accidentally left behind.\n")
+		text.youlost()
+		functions.waitingroom_teleport()
+	elif lava_lake == "2":
+		typing("You hold the statue tight in your arms as you barely land on the first rock.\n")
+		typing("After several minutes, you make it to the other side, with the GOLDEN MONKEY STATUE safe and sound.\n")
+	typing("Then, lava starts rushing after you.\n")
+	typing("Even if you have a knowledge level of 1, you know there is only on thing to do:\n")
+	typing("RUN.\n")
+	time.sleep(2)
+	clear()
+	functions.textloading(3, "RUNNING FROM LAVA")
+	clear()
+	typing("You successfully made it out of the temple.\n")
+	typing("Behind you, you see the temple completely collapse.\n")
+	typing("Bye bye, temple!\n")
+	text.youwon()
+	if "GOLDEN MONKEY STATUE" not in city.trophies:
+		city.trophies.append("GOLDEN MONKEY STATUE")
+		typing("You have successfully obtained the GOLDEN MONKEY STATUE, earning you 25 coins.\n")
+		city.coins += 25
+	else:
+		typing("It looks as though you have already obtained the GOLDEN MONKEY STATUE. Well, I guess I'll still give you 8 coins.\n")
+		city.coins += 5
+	functions.waitingroom_teleport()

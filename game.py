@@ -40,7 +40,7 @@ def tutorial():
 	time.sleep(1)
 	typing("Pick the right answer.\n")
 	time.sleep(1)
-	typing("Here are the current levels!\n")
+	typing("Now, let's pick a level for you to choose!\n")
 	text.levels()
 	levelpick = ""
 	while levelpick not in ["1", "2", "3", "4"]:

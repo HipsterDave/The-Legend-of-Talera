@@ -10,7 +10,7 @@ import game
 #hi
 
 typingspeed = 100
-coins = 10000000000000000000000
+coins = 0
 rustic_coins = 0
 gems = 0
 tuna = 0
@@ -182,7 +182,7 @@ def cityhub():
 				print("HATS")
 				print("1) Fedora - 15 coins")
 				print("2) Baseball Cap - 10 coins")
-				print("3) I <3 Talera Hat - 5 coins")
+				print("3) I❤LT Hat - 5 coins")
 				print("4) Bike Helmet - 20 coins")
 				hats = ""
 				while hats not in ["1", "2", "3"]:
@@ -230,9 +230,9 @@ def cityhub():
 					else:
 						clear()
 						coins = coins - talera_hat_price
-						hat = "I <3 Talera Hat"
+						hat = "I❤LT Hat"
 						typing("You now have " + str(coins) + " coins.\n")
-						typing("Good choice! I <3 Talera!\n")
+						typing("Good choice! I❤LT!\n")
 						typing("Please press enter to continue.\n")
 						input("> ")
 				if hats == "4":
@@ -255,10 +255,16 @@ def cityhub():
 				clear()
 				print("SHIRTS")
 				print("1) White T-Shirt - 10 coins")
-				print("2) I <3 LT T-Shirt - 15 coins")
+				print("2) I❤LT T-Shirt - 15 coins")
+				if levels.mountains() == 1 and "DWARVEN CLUB" or "NON-MAGIC DWARVEN CLUB" in trophies:
+					print("3) I CONQUERED TALERA MOUNTAIN T-shirt - 20 coins")
 				shirts = ""
-				while shirts not in ["1", "2"]:
-					shirts = input("> ")
+				if levels.mountains() == 1 and "DWARVEN CLUB" or "NON-MAGIC DWARVEN CLUB" in trophies:
+					while shirts not in ["1", "2", "3"]:
+						shirts = input("> ")
+				else:
+					while shirts not in ["1", "2"]:
+						shirts = input("> ")
 				if shirts == "1":
 					white_Tshirt_price = 10
 					if coins < white_Tshirt_price:
@@ -286,12 +292,28 @@ def cityhub():
 					else:
 						clear()
 						coins = coins - talera_shirt_price
-						shirt = "I <3 LT T-Shirt"
+						shirt = "I❤LT T-Shirt"
 						typing("You now have " + str(coins) + " coins.\n")
-						if hat == "I <3 Talera Hat":
+						if hat == "I❤LT Hat":
 							typing("It fits nice with the hat. Now you are a REAL fan!\n")
 						else:
 							typing("You should also try to get the matching hat!\n")
+						typing("Please press enter to continue.\n")
+						input("> ")
+					if shirts == "3":
+						talera_shirt_price = 20
+					if coins < talera_shirt_price:
+						clear()
+						typing("You do not have enough coins to buy this.\n")
+						short = str(talera_shirt_price - coins)
+						typing("You are " + short + " coins short.")
+						time.sleep(2)
+					else:
+						clear()
+						coins = coins - talera_shirt_price
+						shirt = "I CONQUERED TALERA MOUNTAIN T-shirt"
+						typing("You now have " + str(coins) + " coins.\n")
+						typing("This shirt proves that you are a real adventurer!\n")
 						typing("Please press enter to continue.\n")
 						input("> ")
 			elif apparel == "3":
