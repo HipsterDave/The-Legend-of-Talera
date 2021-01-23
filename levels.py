@@ -723,7 +723,7 @@ def temple_level():
 	time.sleep(1)
 	clear()
 	typing("It turns out that you are bad at figuring out where to step. You stepped on the wrong tile AGAIN!\n")
-	typing("This time, its evil hamsters you have to look out for.\n")
+	typing("This time, it's evil hamsters you have to look out for.\n")
 	typing("There are a few things you can do:\n")
 	print("1) Fight\n2) Run\n3) Negotiate\n4) Use your brainy powers.")
 	evil_hamsters = ""
