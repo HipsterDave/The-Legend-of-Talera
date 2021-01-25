@@ -32,16 +32,18 @@ def mainmenu():
 	text.mainmenu()
 	typing("Would you like to PLAY, HELP, SEE CREDITS, or QUIT?\n")
 	options = ""
-	while options not in ["play", "help", "see credits", "quit"]:
+	while options not in ["play", "help", "see credits", "quit", "PLAY", "HELP", "SEE CREDITS", "EXIT"]:
 		options = input("> ")
-	if options == "play":
+	if options == "play" or "PLAY":
 		game.tutorial()
-	elif options == "help":
+	elif options == "help" or "HELP":
 		help()
-	elif options == "see credits":
+	elif options == "see credits" or "SEE CREDITS":
 		credits()
-	elif options == "quit":
+	elif options == "quit" or "QUIT":
 		typing("Goodbye!\n")
+	else:
+		typing("You have successfully broken the code somehow.\n")
 
 def help():
 	clear()

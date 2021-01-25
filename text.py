@@ -81,8 +81,9 @@ def levels():
 1) The Mines
 2) The Forest (UNDER CONSTRUCTION NOT FINISHED)
 3) The Mountains
-4) The Temple (UNDER CONSTRUCTION NOT FINISHED)
-5) The Ocean (NOT STARTED)''')
+4) The Temple
+5) The Ocean (NOT STARTED)
+6) Disneyland Talera (NOT STARTED)''')
 
 def mine_entrance():
 	print('''Here are your options:
