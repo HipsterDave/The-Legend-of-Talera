@@ -854,5 +854,5 @@ def temple_level():
 		city.coins += 25
 	else:
 		typing("It looks as though you have already obtained the GOLDEN MONKEY STATUE. Well, I guess I'll still give you 8 coins.\n")
-		city.coins += 5
+		city.coins += 8
 	functions.waitingroom_teleport()
