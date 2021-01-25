@@ -41,11 +41,14 @@ More items are coming, so stay tuned!
  - Replaced waiting room with city
 ### Beta 0.5
  - Added the mountains level
+### Beta 0.6
+ - Added the temple level
+ - Fixed various bugs and typos
 ## Future Updates
 In future updates, _The Legend of Talera_ will include:
  - New forest level
- - New temple level
  - New ocean level that requires a diving suit
+ - New Disneyland Talera level
  - Save and load feature
  - Skip text feature
 
