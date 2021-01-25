@@ -27,6 +27,7 @@ Here are the current items you can get:
  - Shattered Ruby Pieces
  - Dwarven Club
  - Non-magic Dwarven Club
+ - Golden Monkey Statue
 
 More items are coming, so stay tuned!
 ## Updates
