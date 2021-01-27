@@ -109,6 +109,7 @@ def load():
 
 def comeback():
 	clear()
+	save()
 	typing("Ah, welcome back, adventurer!\n")
 	typing("Would you like to go to the city, start another quest, or take a break and leave the game?\n")
 	text.city_or_quest()
