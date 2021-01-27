@@ -25,7 +25,7 @@ class Data():
 		self.pants = "Torn Jeans"
 		self.shoes = "N/A (Looks like you're a hobbit)"
 		self.outerwear = "N/A"
-		self.item = 0
+		self.item = "N/A"
 		self.trophies = []
 	
 
