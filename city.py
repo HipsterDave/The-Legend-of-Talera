@@ -549,7 +549,7 @@ def cityhub():
 							game.save()
 						elif random_loot == "3 gems":
 							typing("Cool! You found 3 gems!\n")
-							gems = gems + 3
+							game.data.gems = game.data.gems + 3
 							game.save()
 						elif random_loot == "A seagull":
 							typing("AHHHH!!! A SEAGULL!!!\n")
