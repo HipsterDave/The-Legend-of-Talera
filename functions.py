@@ -35,7 +35,7 @@ def mainmenu():
 	while options not in ["play", "help", "see credits", "quit", "PLAY", "HELP", "SEE CREDITS", "EXIT"]:
 		options = input("> ")
 	if options == "play" or "PLAY":
-		game.tutorial()
+		game.login_or_signup()
 	elif options == "help" or "HELP":
 		help()
 	elif options == "see credits" or "SEE CREDITS":
