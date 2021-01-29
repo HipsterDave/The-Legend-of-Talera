@@ -45,12 +45,14 @@ More items are coming, so stay tuned!
 ### Beta 0.6
  - Added the temple level
  - Fixed various bugs and typos
+ - Made it so you can save and load your progress (doesn't completely work yet)
 ## Future Updates
 In future updates, _The Legend of Talera_ will include:
  - New forest level
  - New ocean level that requires a diving suit
  - New Disneyland Talera level
- - Save and load feature
+ - New secret level (Can only be earned by beating all other levels)
+ - New secret trophy from this level (Hint: It will only come out in a matter of time)
  - Skip text feature
 
 ## How to add to this code with Github
