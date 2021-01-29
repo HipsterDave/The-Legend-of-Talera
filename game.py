@@ -25,7 +25,7 @@ class Data():
 		self.pants = "Torn Jeans"
 		self.shoes = "N/A (Looks like you're a hobbit)"
 		self.outerwear = "N/A"
-		self.item = 0
+		self.item = "N/A"
 		self.trophies = []
 	
 
@@ -109,6 +109,7 @@ def load():
 
 def comeback():
 	clear()
+	save()
 	typing("Ah, welcome back, adventurer!\n")
 	typing("Would you like to go to the city, start another quest, or take a break and leave the game?\n")
 	text.city_or_quest()
