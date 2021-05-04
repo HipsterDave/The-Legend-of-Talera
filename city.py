@@ -668,8 +668,19 @@ def cityhub():
 				typing("Here are your trophies:\n")
 				for t in game.data.trophies:
 					typing(t + "\n")
-			typing("Please press enter to continue.\n")
-			input("> ")
+			if "DWARVEN CLUB" and "NON-MAGIC DWARVEN CLUB" and "TALERA RUBY" and "SHATTERED RUBY PIECES" and "GOLDEN MONKEY STATUE" in game.data.trophies:
+				if "TIME MACHINE" not in game.data.trophies:
+					typing("Ah, I see. You have all of the trophies you can earn.\n")
+					typing("As you take a look, you notice that they all fit together into a map of Talera.\n")
+					typing("That's when you see a building far away that seems to represent a laboratory.\n")
+					typing("I guess lets go check it out.\n")
+					levels.lab()
+				else:
+					typing("Please press enter to continue.\n")
+					input("> ")
+			else:
+				typing("Please press enter to continue.\n")
+				input("> ")
 		elif city_options == "5":
 			clear()
 			typing("Here is your inventory:\n")
