@@ -914,6 +914,164 @@ def temple_level():
 	game.save()
 	functions.waitingroom_teleport()
 
+def lab():
+	clear()
+	typing("Before we travel to THE LAB, we need to set your levels.\n")
+	time.sleep(1)
+	clear()
+	functions.textloading(3, "Rolling Dice")
+	levelnumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+	knowledge = random.choice(levelnumbers)
+	strength = random.choice(levelnumbers)
+	charisma = random.choice(levelnumbers)
+	speed = random.choice(levelnumbers)
+	typing("Your knowledge level is " + str(knowledge) + ".\n")
+	typing("Your strength level is " + str(strength) + ".\n")
+	typing("Your charisma level is " + str(charisma) + ".\n")
+	typing("Your speed level is " + str(speed) + ".\n")
+	averageleveladd = knowledge + strength + charisma + speed
+	averageleveldivide = averageleveladd/4
+	typing("Your average level is " + str(averageleveldivide) + ".\n")
+	typing("Please press enter to continue.\n")
+	input("> ")
+	clear()
+	functions.textloading(3, "Traveling to THE LAB")
+	clear()
+	typing("Ooooooooooooooooooooh. The LAB looks fancy.\n")
+	typing("By fancy, I mean that it has a lot of neat stuff.\n")
+	typing("Look at that teleportation device over there.\n")
+	typing("Anyway, lets not get distracted.\n")
+	typing("According to the map you saw, there is a mystery trophy you have to obtain.\n")
+	typing("Lets see what it is!\n")
+	time.sleep(1)
+	clear()
+	typing("How about you use that teleportation device to transport yourself around?\n")
+	typing("As you transport around, you find one invention with a plaque.\n")
+	typing("The plaque says: MYSTERY TROPHY: TIME MACHINE\n")
+	typing("Well, you found the mystery trophy. That didn't take long at all, did it?\n")
+	typing("That's when you hear a voice yelling at you.\n")
+	typing("Voice 1 - Hey! You aren't supposed to be here!\n")
+	typing("That voice came from a scientist, who appears to be chasing after you.\n")
+	typing("There are a few options you have:\n")
+	print("1) Fight\n2) Run\n3) Negotiate\n4) Use your knowledge powers\n5) Hide in the TIME MACHINE")
+	typing("Please choose one of these options\n")
+	scientist_escape = ""
+	while scientist_escape not in ["1", "2", "3", "4", "5"]:
+		scientist_escape = input("> ")
+	if scientist_escape == "1":
+		clear()
+		typing("You try to fight the scientist.\n")
+		typing("Unfortunately, he picks up his OVER-POWERED BOXING GLOVES he invented.\n")
+		text.youlost()
+		functions.waitingroom_teleport()
+	elif scientist_escape == "2":
+		typing("You try to run from the scientist.\n")
+		typing("Sadly, he puts on his CHEETAH-STYLE boots he invented.\n")
+		typing("You are no match for him.\n")
+		text.youlost()
+		functions.waitingroom_teleport()
+	elif scientist_escape ==  "3":
+		typing("You try to negotiate with the scientist.\n")
+		typing("He is smart enough to know not to fall for that.\n")
+		text.youlost()
+		functions.waitingroom_teleport()
+	elif scientist_escape == "4":
+		typing("You try to come up with a good plan.\n")
+		typing("Unfortunately, the scientist is much smarter than you by a thousand levels, so no matter what you do, he outsmarts it.\n")
+		text.youlost()
+		functions.waitingroom_teleport()
+	elif scientist_escape == "5":
+		typing("You hide in the TIME MACHINE.\n")
+		typing("You can't hide from the scientist.\n")
+		typing("You nervously press a few buttons.\n")
+		print("ZAP")
+		typing("You find yourself outside the front doors of the lab.\n")
+		typing("Then you see someone walking inside the lab.\n")
+		typing("Then you realize something.\n")
+		typing("You see yourself walking in the lab.\n")
+		typing("You have accidentally travelled back in time.\n")
+		time.sleep(2)
+		clear()
+	typing("You try to time travel back to the present, but your time machine is broken.\n")
+	typing("Not knowing what else to do, you sneak inside the lab to get a glimpse of the original time machine before it broke so you can fix it.\n")
+	typing("You make it to the time machine before, well, Past You.\n")
+	typing("As you observe the time machine, you notice a nearby teleportation device lighting up.\n")
+	typing("You quickly hide behind the time machine.\n")
+	typing("Then, you see Past You come out of the teleporter.\n")
+	typing("You watch Past You view the machine, and see the angry scientist come along.\n")
+	typing("After Past You time travels to the past, the scientist sees you.\n")
+	typing("Scientist - How did you get here?\n")
+	typing("You realize you can get information from him about fixing the time machine.\n")
+	print("Here are the best ways to do it:")
+	print("1) Trick him into giving you the information\n2) Fight\n3) Make him chase you so he gets tired\n4) Negotiate")
+	typing("Please pick an option\n")
+	scientist_help = ""
+	while scientist_help not in ["1", "2", "3", "4"]:
+		scientist_help = input("> ")
+	clear()
+	if scientist_help == "1":
+		typing("You try to trick the scientist into giving you the information.\n")
+		if knowledge > 5:
+			typing("Scientist - So you come from the future where my invention is a success and you came to ask me to fix it when it broke?\n")
+			typing("The scientist fixes the time machine for you.\n")
+			typing("You time travel back to the present.\n")
+			typing("All is well.\n")
+			text.youwon()
+			game.data.trophies.append("TIME MACHINE")
+			typing("You have successfully earned the TIME MACHINE, earning you 25 coins.\n")
+			game.data.coins += 25
+			functions.waitingroom_teleport()
+		else:
+			typing("Your knowledge level of %s won't really get you anywhere.\n" % knowledge)
+			text.youlost()
+			functions.waitingroom_teleport()
+	elif scientist_help == "2":
+		typing("You attempt to fight the scientist.\n")
+		if strength > 5:
+			typing("You were able to beat the scientist, even though he used his MEGA FISTS.\n")
+			typing("Unfortunately, you have nobody to help you fix the time machine.\n")
+			typing("You are stuck in the past.\n")
+		else:
+			typing("With a strength level of %s, you can't beat the scientist.\n")
+		text.youlost()
+		functions.waitingroom_teleport()
+	elif scientist_help == "3":
+		typing("YOu attempt to make the scientist tired by making hime chase you.\n")
+		if speed > 4:
+			typing("You outran the scientist.\n")
+			typing("He is tired.\n")
+			typing("He goes to get a cup of coffee.\n")
+			typing("You stop the scientist and request him to fix the time machine.\n")
+			typing("He accepts.\n")
+			typing("He fixes the time machine.\n")
+			typing("You time travel back to the present.\n")
+			text.youwon()
+			game.data.trophies.append("TIME MACHINE")
+			typing("You have successfully earned the TIME MACHINE, earning you 25 coins.\n")
+			game.data.coins += 25
+			functions.waitingroom_teleport()
+		else:
+			typing("The scientist is too fast for you.\n")
+			text.youlost()
+			functions.waitingroom_teleport()
+	elif scientist_help == "4":
+		typing("You attempt to negotiate with the scientist.\n")
+		if charisma > 3:
+			typing("Scientist - Why should I help you fix my time machine?\n")
+			typing("You - Because it's yours.\n")
+			typing("That seemed to work.\n")
+			typing("The scientist fixes the machine.\n")
+			typing("Then you quickly time travel back to the present without his permission.\n")
+			text.youwon()
+			game.data.trophies.append("TIME MACHINE")
+			typing("You have successfully earned the TIME MACHINE, earning you 25 coins.\n")
+			game.data.coins += 25
+			functions.waitingroom_teleport()
+		else:
+			typing("The scientist is too smart for that.\n")
+			text.youlost()
+			functions.waitingroom_teleport()
+
 def test():
 	game.data.coins += 100
 	if "GOLDEN MONKEY STATUE" not in game.data.trophies:
