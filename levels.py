@@ -34,8 +34,11 @@ def waiting_room():
 	elif city_or_quest == "2":
 		clear()
 		text.levels()
+		if "TIME MACHINE" in game.data.trophies:
+			print("OR")
+			print("7) Travel through time")
 		levelpick = ""
-		while levelpick not in ["1", "2", "3", "4", "1000"]:
+		while levelpick not in ["1", "2", "3", "4", "7", "1000"]:
 			levelpick = input("> ")
 		if levelpick == "1":
 			mines()
@@ -45,6 +48,15 @@ def waiting_room():
 			mountains()
 		elif levelpick == "4":
 			temple_level()
+		elif levelpick == "7":
+			typing("Okay! Where do you want to travel to?\n")
+			text.time_travel()
+			timetravelpick = ""
+			while timetravelpick not in ["1"]:
+				timetravelpick = input("> ")
+			if timetravelpick == "1":
+				typing("Okey dokey then!\n")
+				functions.waitingroom_teleport()
 		elif levelpick == "1000":
 			test()
 	elif city_or_quest == "3":
@@ -121,7 +133,7 @@ def mines():
 	if entrance == "1":
 		clear()
 		if charisma >= 4:
-			typing("You sucessfully convinced the worker to let you in.\n")
+			typing("You successfully convinced the worker to let you in.\n")
 			mines_again()
 		else:
 			typing("You were unable to convince the worker to let you in. You walk away in defeat.\n")
@@ -465,7 +477,6 @@ def mountains():
 		text.youlost()
 		functions.waitingroom_teleport()
 	elif chosen_mountain == "1":
-		return int(chosen_mountain)
 		if speed < 5 and strength < 5:
 			typing("You try to climb up Talera Mountain, but according to your skill levels, you are too weak and slow to climb it before the dwarves run away with the club.\n")
 			game.save()
@@ -612,7 +623,7 @@ def mountains():
 		clear()
 		typing("After about a half-hour, you hear voices.\n")
 		typing("Voice 1 - Ah, yes. A very fantastic club this is!\n")
-		typing("Voice 2 - I can't believe it's ours now!\n")
+		typing("Voice 2 - I can't believe it belongs to us now!\n")
 		typing("The second voice confuses you. Didn't the dwarves already own a club?\n")
 		typing("You walk over towards the voices to find some robbers holding the DWARVEN CLUB.\n")
 		time.sleep(1)
@@ -627,7 +638,7 @@ def mountains():
 		typing("When you wake up, you find yourself in a small, rundown shack with Rob and Gerald looking down at you.\n")
 		typing("Gerald - Wow! This club actually has powers! It knocked him out with the lightest touch.\n")
 		typing("\"Oh no,\" you say to yourself.\n")
-		typing("You were wondering why this club was so important.\n")
+		typing("You were wondering why this club was so valuable.\n")
 		time.sleep(1)
 		clear()
 		typing("All of a sudden, Gerald puts the club down and walks over to you.\n")
@@ -641,7 +652,7 @@ def mountains():
 			shack_escape = input("> ")
 		clear()
 		if shack_escape == "1":
-			typing("You grab the DWARVEN CLUB, smash (or because the club is magic, lightly touch) the wall and run outside.\n")
+			typing("You grab the DWARVEN CLUB, smash (or because the club is magic, lightly touch) the wall to destroy it and run outside.\n")
 			typing("Rob and Gerald hop on horses and chase after you.\n")
 			typing("They chase you until you get cornered.\n")
 			typing("Rob - It's over now.\n")
@@ -742,7 +753,7 @@ def temple_level():
 		game.save()
 		functions.waitingroom_teleport()
 	elif chicken_out == "n":
-		typing("Good choice!\n")
+		typing("I knew you had the guts!\n")
 	typing("You have entered the temple successfully.\n")
 	time.sleep(2)
 	clear()
@@ -942,7 +953,7 @@ def lab():
 	typing("Look at that teleportation device over there.\n")
 	typing("Anyway, lets not get distracted.\n")
 	typing("According to the map you saw, there is a mystery trophy you have to obtain.\n")
-	typing("Lets see what it is!\n")
+	typing("Lets go find it!\n")
 	time.sleep(1)
 	clear()
 	typing("How about you use that teleportation device to transport yourself around?\n")
@@ -988,11 +999,11 @@ def lab():
 		typing("You find yourself outside the front doors of the lab.\n")
 		typing("Then you see someone walking inside the lab.\n")
 		typing("Then you realize something.\n")
-		typing("You see yourself walking in the lab.\n")
+		typing("That person is you.\n")
 		typing("You have accidentally travelled back in time.\n")
 		time.sleep(2)
 		clear()
-	typing("You try to time travel back to the present, but your time machine is broken.\n")
+	typing("You try to time travel back to the present, but the time machine is broken.\n")
 	typing("Not knowing what else to do, you sneak inside the lab to get a glimpse of the original time machine before it broke so you can fix it.\n")
 	typing("You make it to the time machine before, well, Past You.\n")
 	typing("As you observe the time machine, you notice a nearby teleportation device lighting up.\n")
@@ -1020,6 +1031,7 @@ def lab():
 			game.data.trophies.append("TIME MACHINE")
 			typing("You have successfully earned the TIME MACHINE, earning you 25 coins.\n")
 			game.data.coins += 25
+
 			functions.waitingroom_teleport()
 		else:
 			typing("Your knowledge level of %s won't really get you anywhere.\n" % knowledge)
@@ -1036,7 +1048,7 @@ def lab():
 		text.youlost()
 		functions.waitingroom_teleport()
 	elif scientist_help == "3":
-		typing("YOu attempt to make the scientist tired by making hime chase you.\n")
+		typing("You attempt to make the scientist tired by making him chase you.\n")
 		if speed > 4:
 			typing("You outran the scientist.\n")
 			typing("He is tired.\n")
@@ -1066,6 +1078,7 @@ def lab():
 			game.data.trophies.append("TIME MACHINE")
 			typing("You have successfully earned the TIME MACHINE, earning you 25 coins.\n")
 			game.data.coins += 25
+
 			functions.waitingroom_teleport()
 		else:
 			typing("The scientist is too smart for that.\n")

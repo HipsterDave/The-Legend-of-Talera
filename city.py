@@ -177,7 +177,7 @@ def cityhub():
 				print("3) I❤LT Hat - 5 coins")
 				print("4) Bike Helmet - 20 coins")
 				hats = ""
-				while hats not in ["1", "2", "3"]:
+				while hats not in ["1", "2", "3", "4"]:
 					hats = input("> ")
 				if hats == "1":
 					fedora_price = 15
@@ -252,15 +252,12 @@ def cityhub():
 				print("SHIRTS")
 				print("1) White T-Shirt - 10 coins")
 				print("2) I❤LT T-Shirt - 15 coins")
-				if levels.mountains() == 1 and "DWARVEN CLUB" or "NON-MAGIC DWARVEN CLUB" in game.data.trophies:
-					print("3) I CONQUERED TALERA MOUNTAIN T-shirt - 20 coins")
+				#if levels.mountains() == 1 and "DWARVEN CLUB" or "NON-MAGIC DWARVEN CLUB" in game.data.trophies:
+				print("3) I CONQUERED TALERA MOUNTAIN T-shirt - 20 coins")
 				shirts = ""
-				if levels.mountains() == 1 and "DWARVEN CLUB" or "NON-MAGIC DWARVEN CLUB" in game.data.trophies:
-					while shirts not in ["1", "2", "3"]:
-						shirts = input("> ")
-				else:
-					while shirts not in ["1", "2"]:
-						shirts = input("> ")
+				#if levels.mountains() == 1 and "DWARVEN CLUB" or "NON-MAGIC DWARVEN CLUB" in game.data.trophies:
+				while shirts not in ["1", "2", "3"]:
+					shirts = input("> ")
 				if shirts == "1":
 					white_Tshirt_price = 10
 					if game.data.coins < white_Tshirt_price:
@@ -312,7 +309,7 @@ def cityhub():
 						game.data.shirt = "I CONQUERED TALERA MOUNTAIN T-shirt"
 						typing("You now have " + str(game.data.coins) + " .coins.\n")
 						game.save()
-						typing("This shirt proves that you are a real adventurer!\n")
+						typing("This shirt proves that you are a real adventurer (Try conquering it if you haven't yet)!\n")
 						typing("Please press enter to continue.\n")
 						input("> ")
 			elif apparel == "3":
@@ -531,6 +528,7 @@ def cityhub():
 						if random_number == "3":
 							if "Talera Ruby" not in game.data.trophies:
 								typing("Woah! You got the Talera Ruby! I wonder how it got in the water...\n")
+								game.data.trophies.append("TALERA RUBY")
 							else:
 								typing("You got nothing.\n")
 						else:
@@ -567,7 +565,7 @@ def cityhub():
 						typing("SHARK!!!!!\n")
 						time.sleep(1)
 						clear()
-						functions.textloading(3, "FIGHTING SHARK")
+						functions.textloading(2, "FIGHTING SHARK")
 						typing("The shark ate 10 of your coins.\n")
 						game.data.coins = game.data.coins - 10
 						game.save()
