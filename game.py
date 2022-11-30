@@ -143,6 +143,7 @@ def comeback():
 				timetravelpick = input("> ")
 			if timetravelpick == "1":
 				typing("Okey dokey then!\n")
+				print("WORK IN PROGRESS NOT DONE YET")
 				functions.waitingroom_teleport()
 		elif levelpick == "1000":
 			levels.test()

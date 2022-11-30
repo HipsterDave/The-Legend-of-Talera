@@ -663,15 +663,22 @@ def cityhub():
 			if game.data.trophies == []:
 				typing("Hmm... Seems like you do not have any trophies. How do you fix this? GO DO SOME QUESTS!!!\n")
 			else:
+				if "Talera Ruby" in game.data.trophies:
+					game.data.trophies.remove("Talera Ruby")
+					game.data.trophies.append("TALERA RUBY")
+				if "Shattered Ruby Pieces" in game.data.trophies:
+					game.data.trophies.remove("Shattered Ruby Pieces")
+					game.data.trophies.append("SHATTERED RUBY PIECES")
 				typing("Here are your trophies:\n")
 				for t in game.data.trophies:
 					typing(t + "\n")
-			if "DWARVEN CLUB" and "NON-MAGIC DWARVEN CLUB" and "TALERA RUBY" and "SHATTERED RUBY PIECES" and "GOLDEN MONKEY STATUE" in game.data.trophies:
+			if "NON-MAGIC DWARVEN CLUB" and "DWARVEN CLUB" and "TALERA RUBY" and "SHATTERED RUBY PIECES" and "GOLDEN MONKEY STATUE" in game.data.trophies:
 				if "TIME MACHINE" not in game.data.trophies:
 					typing("Ah, I see. You have all of the trophies you can earn.\n")
 					typing("As you take a look, you notice that they all fit together into a map of Talera.\n")
 					typing("That's when you see a building far away that seems to represent a laboratory.\n")
 					typing("I guess lets go check it out.\n")
+					time.sleep(1)
 					levels.lab()
 				else:
 					typing("Please press enter to continue.\n")

@@ -222,15 +222,15 @@ def mines_again():
 					typing("You attempt to run.\n")
 					if speed == 10:
 						typing("WHAT??? You have a speed level of 10! You successfully made it out of the cave.\n")
-						if "Talera Ruby" not in game.data.trophies:
-							game.data.trophies.append("Talera Ruby")
+						if "TALERA RUBY" not in game.data.trophies:
+							game.data.trophies.append("TALERA RUBY")
 							typing("You obtained the TALERA RUBY!\n")
 							typing("You have also earned 20 coins!\n")
 							game.data.coins = game.data.coins + 20
 							game.save()
 							text.youwon()
-							if "Shattered Ruby Pieces" not in game.data.trophies:
-								typing("You may have won, but you can also get the shattered ruby pieces.\n")
+							if "SHATTERED RUBY PIECES" not in game.data.trophies:
+								typing("You may have won, but you can also get the SHATTERED RUBY PIECES.\n")
 							functions.waitingroom_teleport()
 						else:
 							typing("Seems like you already have the TALERA RUBY inside your trophy room...\n")
@@ -249,15 +249,15 @@ def mines_again():
 					typing("You attempt to find a safe place to hide.\n")
 					typing("You find a big rock to hide under.\n")
 					typing("The avalanche ends.\n")
-					if "Talera Ruby" not in game.data.trophies:
-						game.data.trophies.append("Talera Ruby")
+					if "TALERA RUBY" not in game.data.trophies:
+						game.data.trophies.append("TALERA RUBY")
 						typing("You obtained the TALERA RUBY!\n")
 						typing("You have also earned 20 coins!\n")
 						game.data.coins = game.data.coins + 20
 						game.save()
 						text.youwon()
-						if "Shattered Ruby Pieces" not in game.data.trophies:
-							typing("You may have won, but you can also get the shattered ruby pieces.\n")
+						if "SHATTERED RUBY PIECES" not in game.data.trophies:
+							typing("You may have won, but you can also get the SHATTERED RUBY PIECES.\n")
 							
 						functions.waitingroom_teleport()
 					else:
@@ -271,14 +271,14 @@ def mines_again():
 					typing("You attempt to shield yourself with the ruby.\n")
 					typing("As the rocks fall on the ruby, it shatters to pieces.\n")
 					typing("Still, you have made it out of the mines.\n")
-					if "Shattered Ruby Pieces" not in game.data.trophies:
-						game.data.trophies.append("Shattered Ruby Pieces")
+					if "SHATTERED RUBY PIECES" not in game.data.trophies:
+						game.data.trophies.append("SHATTERED RUBY PIECES")
 						typing("You obtained the SHATTERED RUBY PIECES!\n")
 						typing("You have also earned 15 coins!\n")
 						game.data.coins = game.data.coins + 15
 						game.save()
 						text.youwon()
-						if "Talera Ruby" not in game.data.trophies:
+						if "TALERA RUBY" not in game.data.trophies:
 							typing("You may have won, but you can still get the full ruby.\n")
 						functions.waitingroom_teleport()
 					else:
@@ -308,14 +308,14 @@ def mines_again():
 			typing("You attempt to run.\n")
 			if speed == 10:
 				typing("WHAT??? You have a speed level of 10! You successfully made it out of the cave.\n")
-				if "Talera Ruby" not in game.data.trophies:
-					game.data.trophies.append("Talera Ruby")
+				if "TALERA RUBY" not in game.data.trophies:
+					game.data.trophies.append("TALERA RUBY")
 					typing("You obtained the TALERA RUBY!\n")
 					typing("You have also earned 20 coins!\n")
 					game.data.coins = game.data.coins + 20
 					game.save()
 					text.youwon()
-					typing("You may have won, but you can also get the shattered ruby pieces.\n")
+					typing("You may have won, but you can also get the SHATTERED RUBY PIECES.\n")
 					functions.waitingroom_teleport()
 				else:
 					typing("Seems like you already have the TALERA RUBY inside your trophy room...\n")
@@ -334,15 +334,15 @@ def mines_again():
 			typing("You attempt to find a safe place to hide.\n")
 			typing("You find a big rock to hide under.\n")
 			typing("The avalanche ends.\n")
-			if "Talera Ruby" not in game.data.trophies:
-				game.data.trophies.append("Talera Ruby")
+			if "TALERA RUBY" not in game.data.trophies:
+				game.data.trophies.append("TALERA RUBY")
 				typing("You obtained the TALERA RUBY!\n")
 				typing("You have also earned 20 coins!\n")
 				game.data.coins = game.data.coins + 20
 				game.save()
 				text.youwon()
 			if "Shattered Ruby Pieces" not in game.data.trophies:
-				typing("You may have won, but you can also get the shattered ruby pieces.\n")
+				typing("You may have won, but you can also get the SHATTERED RUBY PIECES.\n")
 				functions.waitingroom_teleport()
 			else:
 				typing("Seems like you already have the TALERA RUBY inside your trophy room...\n")
@@ -355,13 +355,13 @@ def mines_again():
 			typing("You attempt to shield yourself with the ruby.\n")
 			typing("As the rocks fall on the ruby, it shatters to pieces.\n")
 			typing("Still, you have made it out of the mines.\n")
-			if "Shattered Ruby Pieces" not in game.data.trophies:
-				game.data.trophies.append("Shattered Ruby Pieces")
+			if "SHATTERED RUBY PIECES" not in game.data.trophies:
+				game.data.trophies.append("SHATTERED RUBY PIECES")
 				typing("You obtained the SHATTERED RUBY PIECES!\n")
 				typing("You have also earned 15 coins!\n")
 				game.data.coins = game.data.coins + 15
 				text.youwon()
-				if "Talera Ruby" not in game.data.trophies:
+				if "TALERA RUBY" not in game.data.trophies:
 					typing("You may have won, but you can still get the full ruby.\n")
 				game.save()
 				functions.waitingroom_teleport()
@@ -541,7 +541,7 @@ def mountains():
 			time.sleep(1)
 			clear()
 			typing("You made it to Mount Goat. Time to climb!\n")
-			typing("You found a large area. It is a good place to take a break.\n")
+			typing("You find a large area. It is a good place to take a break.\n")
 			typing("As you sit down, a goat walks up to you.\n")
 			typing("Goat - I AM KING GOAT! I COMMAND YOU TO GET OFF MY PROPERTY!\n")
 			text.goat_king()
@@ -698,7 +698,7 @@ def mountains():
 				text.youwon()
 				if "NON-MAGIC DWARVEN CLUB" not in game.data.trophies:
 					game.data.trophies.append("NON-MAGIC DWARVEN CLUB")
-					typing("You have also earned 10 coins.\n")
+					typing("You have earned the NON-MAGIC DWARVEN CLUB as well as 10 coins.\n")
 					game.data.coins = game.data.coins + 10
 					game.save()
 				else:
@@ -709,12 +709,6 @@ def mountains():
 				if "DWARVEN CLUB" in game.data.trophies:
 					typing("You may have won, but you can still get the DWARVEN CLUB with its magic powers.\n")
 					game.save()
-				functions.waitingroom_teleport()
-			elif randomnumber == "3":
-				typing("The potion you threw was just a glass of water.\n")
-				typing("It didn't do much.\n")
-				text.youlost()
-				game.save()
 				functions.waitingroom_teleport()
 
 def temple_level():
@@ -753,7 +747,7 @@ def temple_level():
 		game.save()
 		functions.waitingroom_teleport()
 	elif chicken_out == "n":
-		typing("I knew you had the guts!\n")
+		typing("I knew you had the guts! I'm sure you won't have problems with your claustrophobia, though...\n")
 	typing("You have entered the temple successfully.\n")
 	time.sleep(2)
 	clear()
@@ -826,7 +820,7 @@ def temple_level():
 		typing("You attempt to use your knowledge to come up with a plan.\n")
 		if knowledge >= 3:
 			typing("You look around and notice some hamster food on a nearby shelf.\n")
-			typing("Knowing that animals do anything for food, you chase them over to the hamster food.\n")
+			typing("Knowing that animals do anything for food, you lure them over to the hamster food.\n")
 			typing("It's the perfect distraction.\n")
 		else:
 			typing("Since you have a knowledge level of %s, you are not the smartest and try to pick up the hamsters so they won't run at you.\n" % knowledge)
@@ -952,7 +946,7 @@ def lab():
 	typing("By fancy, I mean that it has a lot of neat stuff.\n")
 	typing("Look at that teleportation device over there.\n")
 	typing("Anyway, lets not get distracted.\n")
-	typing("According to the map you saw, there is a mystery trophy you have to obtain.\n")
+	typing("According to the map you saw, there is a MYSTERY TROPHY you have to obtain.\n")
 	typing("Lets go find it!\n")
 	time.sleep(1)
 	clear()
@@ -1087,7 +1081,7 @@ def lab():
 
 def test():
 	game.data.coins += 100
-	if "GOLDEN MONKEY STATUE" not in game.data.trophies:
+	if "TOTALLY SECRET TROPHY THAT YOU ARE NOT SUPPOSED TO KNOW ABOUT" not in game.data.trophies:
 		game.data.trophies.append("TOTALLY SECRET TROPHY THAT YOU ARE NOT SUPPOSED TO KNOW ABOUT")
 		typing("You have successfully obtained the TOTALLY SECRET TROPHY THAT YOU ARE NOT SUPPOSED TO KNOW ABOUT, earning you 25 coins.\n")
 		game.data.coins += 25
