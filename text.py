@@ -85,6 +85,11 @@ def levels():
 5) The Ocean (NOT STARTED)
 6) Disneyland Talera (NOT STARTED)''')
 
+def time_travel():
+	print('''
+	time travel levels here
+	1) Never mind''')
+
 def mine_entrance():
 	print('''Here are your options:
 1) Try and convince the worker to let you in

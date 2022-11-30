@@ -91,6 +91,7 @@ def textloading(repeat, text):
 		clear()
 
 def waitingroom_teleport():
+	game.save()
 	typing("Please press enter to continue.\n")
 	input("> ")
 	clear()

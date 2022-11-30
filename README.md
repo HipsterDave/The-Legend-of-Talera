@@ -29,9 +29,6 @@ Here are the current items you can get:
  - Non-magic Dwarven Club
  - Golden Monkey Statue
 
-## Game Online
-[Legend of Talera](https://the-legend-of-talera.herokuapp.com/)
-
 More items are coming, so stay tuned!
 ## Updates
 ### Beta 0.1
@@ -48,14 +45,12 @@ More items are coming, so stay tuned!
 ### Beta 0.6
  - Added the temple level
  - Fixed various bugs and typos
-### Beta 0.7
- - Added save and load feature
-
 ## Future Updates
 In future updates, _The Legend of Talera_ will include:
  - New forest level
  - New ocean level that requires a diving suit
  - New Disneyland Talera level
+ - Save and load feature
  - Skip text feature
 
 ## How to add to this code with Github

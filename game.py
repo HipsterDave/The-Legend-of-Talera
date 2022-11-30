@@ -135,6 +135,16 @@ def comeback():
 			levels.mountains()
 		elif levelpick == "4":
 			levels.temple_level()
+		elif levelpick == "7":
+			typing("Okay! Where do you want to travel to?\n")
+			text.time_travel()
+			timetravelpick = ""
+			while timetravelpick not in ["1"]:
+				timetravelpick = input("> ")
+			if timetravelpick == "1":
+				typing("Okey dokey then!\n")
+				print("WORK IN PROGRESS NOT DONE YET")
+				functions.waitingroom_teleport()
 		elif levelpick == "1000":
 			levels.test()
 	elif city_or_quest == "3":
