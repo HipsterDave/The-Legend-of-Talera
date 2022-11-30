@@ -23,16 +23,17 @@ Here are your options:
 These are the basics of this game. Happy playing!
 ## Obtainable Items
 Here are the current items you can get:
- - Talera Ruby
- - Shattered Ruby Pieces
- - Dwarven Club
- - Non-magic Dwarven Club
- - Golden Monkey Statue
+ - TALERA RUBY
+ - SHATTERED RUBY PIECES
+ - DWARVEN CLUB
+ - NON-MAGIC DWARVEN CLUB
+ - GOLDEN MONKEY STATUE
+ - aaaaand...TIME MACHINE
 
 More items are coming, so stay tuned!
 ## Updates
 ### Beta 0.1
- - Created Legend of Talera
+ - Created _The Legend of Talera_
 ### Beta 0.2
  - Fixed various bugs
 ### Beta 0.3
@@ -48,7 +49,7 @@ More items are coming, so stay tuned!
 ### Beta 0.7
  - Added save and load feature
 ### Beta 0.8
- - Added a secret level
+ - Added a secret lab level
  - Fixed various bugs and typos
 
 ## Future Updates
